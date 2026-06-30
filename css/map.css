@@ -1,0 +1,504 @@
+/* ===========================
+   AIR AFRICA MAP STYLES
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#081b29;
+    color:white;
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+.map-section{
+    width:100%;
+    min-height:100vh;
+    padding:40px;
+}
+
+.map-section h1{
+    text-align:center;
+    font-size:48px;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.map-section p{
+    text-align:center;
+    color:#c9d4dc;
+    font-size:18px;
+    margin-bottom:40px;
+}
+
+/* ===========================
+   LAYOUT
+=========================== */
+
+.map-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:stretch;
+
+    gap:35px;
+
+}
+
+/* ===========================
+   MAP
+=========================== */
+
+.map{
+
+    flex:2;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+#africaMap{
+
+    width:100%;
+
+    height:650px;
+
+    border:none;
+
+    flex:1;
+
+    margin:20px 0;
+
+}
+
+/* ===========================
+   INFO PANEL
+=========================== */
+
+.info-panel{
+
+    flex:1;
+
+    min-height:760px;
+
+    background:#0f2c45;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+.info-panel h2{
+
+    font-size:38px;
+
+    margin-bottom:20px;
+
+}
+
+.info-panel hr{
+
+    border:none;
+
+    height:2px;
+
+    background:#ffffff33;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ===========================
+   STATS
+=========================== */
+
+.stats{
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:18px;
+    flex:0 0 auto;
+
+}
+
+.stat{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 16px;
+    background:#173954;
+    border-radius:12px;
+    transition:.3s;
+
+}
+
+.stat:hover{
+
+    background:#1f5276;
+    transform:translateY(-2px);
+
+}
+
+.stat span{
+
+    font-size:16px;
+
+}
+
+.stat strong{
+
+    color:#00AEEF;
+    font-size:20px;
+
+}
+
+/* ===========================
+   AIR FOOTPRINT
+=========================== */
+
+.info-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:760px;
+
+    overflow:hidden;
+
+}
+
+.regions-section{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:0;
+
+}
+
+.regions-section h3{
+
+    font-size:24px;
+
+    margin-bottom:20px;
+
+    color:#00AEEF;
+
+}
+
+#regionContainer,
+#regionsContainer{
+
+    flex:1;
+    min-height:0;
+    overflow-y:auto;
+    padding-right:8px;
+
+}
+
+/* Region Cards */
+
+.region-card{
+
+    background:#173954;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    border-left:5px solid #00AEEF;
+
+    transition:.3s;
+
+}
+
+.region-card:hover{
+
+    background:#1f5276;
+
+    transform:translateY(-3px);
+
+}
+
+.region-card h4{
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+    color:#ffffff;
+
+}
+
+.region-card p{
+
+    margin:6px 0;
+
+    color:#d8e8f3;
+
+    font-size:15px;
+
+    text-align:left;
+
+}
+
+/* Beautiful Scrollbar */
+
+#regionsContainer::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+#regionsContainer::-webkit-scrollbar-track{
+
+    background:#0f2c45;
+
+    border-radius:20px;
+
+}
+
+#regionsContainer::-webkit-scrollbar-thumb{
+
+    background:#00AEEF;
+
+    border-radius:20px;
+
+}
+
+#regionsContainer::-webkit-scrollbar-thumb:hover{
+
+    background:#0090cc;
+
+}
+/* ===========================
+   REGION CARD LAYOUT
+=========================== */
+
+.region-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:12px;
+
+}
+
+.region-header h4{
+
+    margin:0;
+
+    font-size:18px;
+
+}
+
+.status{
+
+    padding:4px 10px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    color:#fff;
+
+}
+
+.status.active{
+
+    background:#28a745;
+
+}
+
+.status.planned{
+
+    background:#f39c12;
+
+}
+
+.region-stat{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:8px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.region-stat:last-child{
+
+    border-bottom:none;
+
+}
+
+.region-stat span{
+
+    font-size:15px;
+
+    color:#d8e8f3;
+
+}
+
+.region-stat strong{
+
+    color:#00AEEF;
+
+    font-size:18px;
+
+}
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+    .map-container{
+
+        flex-direction:column;
+
+    }
+
+    .map{
+
+        width:100%;
+
+    }
+
+    .info-panel{
+
+        width:100%;
+
+        min-height:auto;
+
+    }
+
+    #africaMap{
+
+        height:600px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .map-section{
+
+        padding:20px;
+
+    }
+
+    .map-section h1{
+
+        font-size:34px;
+
+    }
+
+    .map-section p{
+
+        font-size:16px;
+
+    }
+
+    #africaMap{
+
+        height:450px;
+
+    }
+
+}
+
+
+
+
+.map-subtitle{
+    color:#555;
+    text-align:center;
+    font-size:18px;
+    margin-bottom:18px;
+}
+
+/* ===================================
+   SPONSORS
+=================================== */
+
+.sponsor-strip{
+    margin-top:25px;
+    border-top:2px solid #e5e5e5;
+    padding-top:15px;
+}
+
+.sponsor-strip h3{
+    text-align:center;
+    color:#333;
+    margin-bottom:15px;
+    font-size:20px;
+}
+
+.sponsor-slider{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.sponsor-item{
+    background:#f4f4f4;
+    color:#333;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    border:1px solid #ddd;
+    transition:.3s;
+}
+
+.sponsor-item:hover{
+    background:#00AEEF;
+    color:#fff;
+}

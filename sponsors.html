@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Industrial Revolution (AIR) - Sponsors & Partners</title>
+
+```
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="forms.css">
+```
+
+</head>
+
+<body>
+
+```
+<header>
+    <div class="container">
+        <h1>African Industrial Revolution (AIR)</h1>
+        <p>Sponsors & Partners Registration Portal</p>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+
+        <h2>Sponsor or Partner With AIR</h2>
+
+        <p class="form-description">
+            AIR welcomes individuals, companies, universities, NGOs,
+            government departments and foundations that wish to support
+            mentorship, education, technology and innovation across Africa.
+        </p>
+
+<form id="sponsorForm">
+
+<label>Organisation / Sponsor Name</label>
+<input type="text"
+    name="organisationname"
+    placeholder="Enter organisation or sponsor name"
+    required>
+
+<label>Contact Person</label>
+<input type="text"
+    name="contactperson"
+    placeholder="Enter contact person name"
+    required>
+
+<label>Email Address</label>
+<input type="email"
+    name="emailaddress"
+    placeholder="Enter email address"
+    required>
+
+<label>Phone Number</label>
+<input type="tel"
+    name="phonenumber"
+    placeholder="Enter phone number">
+
+<label>Country</label>
+<input type="text"
+    name="country"
+    placeholder="Enter country"
+    required>
+
+<label>Organisation Type</label>
+
+<select name="organisationtype" required>
+    <option value="">Select Organisation Type</option>
+
+    <option>Individual Sponsor</option>
+    <option>Company</option>
+    <option>University</option>
+    <option>NGO / NPO</option>
+    <option>Government Department</option>
+    <option>Foundation</option>
+    <option>Professional Body</option>
+    <option>School</option>
+    <option>Other</option>
+</select>
+
+<label>Area of Interest</label>
+
+<select name="areaofinterest" required>
+    <option value="">Select Area of Interest</option>
+
+    <option>AIR Mentorship & Academic Support Network</option>
+    <option>AIR Tech Academy</option>
+    <option>Research & Innovation Projects</option>
+    <option>Volunteer Development</option>
+    <option>Learner Competitions</option>
+    <option>Website & Technology Development</option>
+    <option>General AIR Programmes</option>
+</select>
+
+<label>Type of Support</label>
+
+<select name="typeofsupport" required>
+    <option value="">Select Type of Support</option>
+
+    <option>Financial Sponsorship</option>
+    <option>Equipment Donation</option>
+    <option>Laptops & Devices</option>
+    <option>Internet/Data Sponsorship</option>
+    <option>Software Licences</option>
+    <option>Mentorship Support</option>
+    <option>Training Support</option>
+    <option>Venue Sponsorship</option>
+    <option>Research Funding</option>
+    <option>Partnership Opportunity</option>
+</select>
+
+<label>Message</label>
+
+<textarea
+    name="message"
+    rows="6"
+    placeholder="Tell us how you would like to support AIR."
+    required></textarea>
+
+<div class="checkbox-group">
+    <label>
+        <input type="checkbox" required>
+        I confirm that the information provided is accurate.
+    </label>
+</div>
+
+<button type="submit" class="btn">
+    Submit Sponsorship Interest
+</button>
+
+ </form>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 African Industrial Revolution (AIR)</p>
+    </div>
+</footer>
+```
+<script>
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbxxPgYjWxGKleqoy55shq6yt9TyOLaX8nD3cY9u7Z2EKAJNksJzqel6ZMCGTHhOD_PH3Q/exec";
+
+const form = document.getElementById("sponsorForm");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const button = form.querySelector("button");
+
+    button.disabled = true;
+    button.innerText = "Submitting...";
+
+    const formData = new FormData(form);
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: formData
+    })
+
+    .then(response => {
+
+        alert("Thank you for your interest in supporting AIR. Your sponsorship application has been submitted successfully.");
+
+        form.reset();
+
+        button.disabled = false;
+        button.innerText = "Submit Sponsorship Interest";
+
+    })
+
+    .catch(error => {
+
+        alert("An error occurred. Please try again.");
+
+        button.disabled = false;
+        button.innerText = "Submit Sponsorship Interest";
+
+        console.error(error);
+
+    });
+
+});
+
+</script>
+</body>
+
+</html>

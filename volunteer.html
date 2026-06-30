@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Industrial Revolution (AIR) - Volunteer Registration</title>
+
+```
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Industrial Revolution (AIR) - Volunteer Registration</title>
+
+```
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="forms.css">
+```
+</head>
+
+<body>
+
+```
+<header>
+    <div class="container">
+        <h1>African Industrial Revolution (AIR)</h1>
+        
+    </div>
+</header>
+
+<section>
+    <div class="container">
+
+        <h2>Volunteer Registration</h2>
+<a href="index.html" class="btn">← Back to Home</a>
+        <p class="form-description">
+            Join AIR and help empower learners across Africa through mentorship,
+            education, technology, research and innovation.
+        </p>
+
+      <form id="volunteerForm">
+
+    <label>Full Name</label>
+    <input type="text"
+           name="fullname"
+           placeholder="Enter your full name"
+           required>
+
+    <label>Email Address</label>
+    <input type="email"
+           name="email"
+           placeholder="Enter your email address"
+           required>
+
+    <label>Country</label>
+    <input type="text"
+           name="country"
+           placeholder="Enter your country"
+           required>
+
+    <label>Profession</label>
+    <input type="text"
+           name="profession"
+           placeholder="Profession or occupation"
+           required>
+
+    <label>Highest Qualification</label>
+    <input type="text"
+           name="qualification"
+           placeholder="Highest qualification obtained"
+           required>
+
+    <label>AIR Programme</label>
+
+    <select name="programme" id="programme" required>
+
+        <option value="">Select Programme</option>
+
+        <option>AIR Mentorship & Academic Support Network</option>
+        <option>AIR Tech Academy</option>
+      <!-- <option>AIR Administration & Support Services</option>-->
+
+    </select>
+
+    <label>Area of Specialization</label>
+
+    <select name="specialization" id="specialization" required>
+
+    <option value="">
+        Select Area of Specialization
+    </option>
+
+
+    </select>
+
+    <label>Qualifications, Experience and Skills</label>
+
+    <textarea name="skills"
+              rows="5"
+              placeholder="Tell us about your qualifications, experience and skills."
+              required></textarea>
+
+    <label>Languages Spoken</label>
+
+    <input type="text"
+           name="languages"
+           placeholder="Example: English, French, Swahili">
+
+    <label>Availability</label>
+
+    <select name="availability" required>
+
+        <option value="">Select Availability</option>
+        <option>Weekdays</option>
+        <option>Weekends</option>
+        <option>Evenings</option>
+        <option>Flexible</option>
+
+    </select>
+
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" required>
+            I agree to follow AIR policies, code of conduct and safeguarding guidelines.
+        </label>
+    </div>
+
+    <div class="checkbox-group">
+        <label>
+            <input type="checkbox" required>
+            I understand that I am volunteering voluntarily and I am not an employee of AIR.
+        </label>
+    </div>
+
+    <button type="submit" class="btn">
+        Submit Volunteer Application
+    </button>
+
+</form>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2026 African Industrial Revolution (AIR)</p>
+    </div>
+</footer>
+```<script>
+    //alert("JavaScript Loaded");
+// =========================
+// DEPENDENT DROPDOWN
+// =========================
+
+const programme = document.getElementById("programme");
+const specialization = document.getElementById("specialization");
+
+const options = {
+
+    "AIR Mentorship & Academic Support Network": [
+
+        "Mathematics Mentor",
+        "Physical Sciences Mentor",
+        "Accounting Mentor",
+        "Life Sciences Mentor",
+        "Geography Mentor",
+        "History Mentor",
+        "Economics Mentor",
+        "Business Studies Mentor",
+        "English Mentor",
+        "Afrikaans Mentor",
+        "French Mentor",
+        "Swahili Mentor",
+        "Computer Applications Technology Mentor",
+        "Information Technology Mentor",
+        "Engineering Graphics & Design Mentor",
+        "Agricultural Sciences Mentor",
+        "Career Guidance Mentor",
+        "University Application Advisor",
+        "Bursary Advisor"
+
+    ],
+
+    "AIR Tech Academy": [
+
+        "HTML Mentor",
+        "CSS Mentor",
+        "JavaScript Mentor",
+        "Python Mentor",
+        "Java Mentor",
+        "C++ Mentor",
+        "C# Mentor",
+        "PHP Mentor",
+        "SQL Mentor",
+        "Web Development Mentor",
+        "Mobile App Development Mentor",
+        "Artificial Intelligence Mentor",
+        "Machine Learning Mentor",
+        "Cybersecurity Mentor",
+        "Data Science Mentor",
+        "Cloud Computing Mentor",
+        "Robotics Mentor",
+        "CAD Design Mentor",
+        "Engineering Projects Mentor",
+        "Research Mentor"
+
+    ]
+};
+
+programme.addEventListener("change", function () {
+
+    specialization.innerHTML =
+        '<option value="">Select Area of Specialization</option>';
+
+    if (options[this.value]) {
+
+        options[this.value].forEach(function (item) {
+
+            let option = document.createElement("option");
+
+            option.value = item;
+            option.textContent = item;
+
+            specialization.appendChild(option);
+
+        });
+
+    }
+
+});
+
+// =========================
+// GOOGLE SHEETS SUBMISSION
+// =========================
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbz8ktMT1JfcACm2g3TThOHlQ5zBwjBPC2oMgTU0GUNE5KWTdqc4iCDDDuzYWsBhddss/exec";
+
+const form = document.getElementById("volunteerForm");
+
+form.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const button = form.querySelector("button");
+
+    button.disabled = true;
+    button.innerText = "Submitting...";
+
+    const formData = new FormData(form);
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: formData
+    })
+
+    .then(response => {
+
+        alert("Thank you for applying to volunteer with AIR. Your application has been submitted successfully.");
+
+        form.reset();
+
+        button.disabled = false;
+        button.innerText = "Submit Volunteer Application";
+
+    })
+
+    .catch(error => {
+
+        alert("An error occurred. Please try again.");
+
+        button.disabled = false;
+        button.innerText = "Submit Volunteer Application";
+
+        console.error(error);
+
+    });
+
+});
+</script>
+</body>
+
+
+
+</html>
