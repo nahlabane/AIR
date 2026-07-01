@@ -409,13 +409,11 @@ body{
 
     }
 
-    .info-panel{
-
-        width:100%;
-
-        min-height:auto;
-
-    }
+   .info-panel{
+    height:auto;
+    min-height:auto;
+    overflow:visible;
+}
 
     #africaMap{
 
@@ -428,32 +426,49 @@ body{
 @media(max-width:768px){
 
     .map-section{
+        padding:10px;
+    }
 
-        padding:20px;
+    .map-container{
+        gap:15px;
+    }
 
+    .map{
+        padding:10px;
     }
 
     .map-section h1{
-
-        font-size:34px;
-
+        font-size:32px;
     }
 
     .map-section p{
-
         font-size:16px;
-
     }
 
     #africaMap{
+        width:100%;
+        height:75vh;
+        min-height:600px;
+        display:block;
+        margin:10px auto;
+    }
 
-        height:450px;
+    .info-panel{
+        height:auto;
+        min-height:auto;
+        overflow:visible;
+    }
 
+    .regions-section{
+        height:auto;
+    }
+
+    #regionsContainer{
+        max-height:none;
+        overflow:visible;
     }
 
 }
-
-
 
 
 .map-subtitle{
