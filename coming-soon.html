@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coming Soon | African Industrial Revolution</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#081B29;
+            color:#fff;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            padding:20px;
+        }
+
+        .container{
+            width:100%;
+            max-width:900px;
+            background:#0F2C45;
+            border-radius:20px;
+            padding:50px 40px;
+            text-align:center;
+            box-shadow:0 15px 40px rgba(0,0,0,.35);
+        }
+
+        .logo{
+            width:180px;
+            max-width:100%;
+            margin-bottom:25px;
+        }
+
+        h1{
+            font-size:46px;
+            margin-bottom:15px;
+            color:#ffffff;
+        }
+
+        .subtitle{
+            color:#00AEEF;
+            font-size:24px;
+            margin-bottom:30px;
+            font-weight:bold;
+        }
+
+        .description{
+            color:#d7e6f1;
+            line-height:1.8;
+            font-size:18px;
+            margin-bottom:35px;
+        }
+
+        .features{
+            list-style:none;
+            display:inline-block;
+            text-align:left;
+            margin-bottom:40px;
+        }
+
+        .features li{
+            margin:15px 0;
+            font-size:18px;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#00AEEF;
+            color:#fff;
+            text-decoration:none;
+            padding:15px 35px;
+            border-radius:50px;
+            font-size:18px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#0095d6;
+            transform:translateY(-3px);
+        }
+
+        .footer{
+            margin-top:40px;
+            color:#b9d0dd;
+            font-size:16px;
+        }
+
+        @media (max-width:768px){
+
+            .container{
+                padding:35px 25px;
+            }
+
+            .logo{
+                width:130px;
+            }
+
+            h1{
+                font-size:34px;
+            }
+
+            .subtitle{
+                font-size:20px;
+            }
+
+            .description{
+                font-size:16px;
+            }
+
+            .features li{
+                font-size:16px;
+            }
+
+            .btn{
+                width:100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="images/air-logo.PNG" alt="AIR Logo" class="logo">
+
+    <h1 id="pageTitle">Coming Soon</h1>
+
+    <p class="subtitle" id="pageSubtitle">
+        African Industrial Revolution (AIR)
+    </p>
+
+    <p class="description">
+
+        Thank you for visiting the African Industrial Revolution website.
+
+        <br><br>
+
+        This section is currently under development as we continue building Africa's leading platform for education, mentorship, research, innovation and technology.
+
+        <br><br>
+
+        Our team is working hard to deliver exciting new features that will empower learners, mentors, educators, researchers, entrepreneurs and partners across Africa.
+
+    </p>
+
+    <ul class="features">
+
+       
+
+    </ul>
+
+    <br>
+
+    <a href="index.html" class="btn">
+
+        🏠 Return to Home
+
+    </a>
+
+    <div class="footer">
+
+        <p><strong>INSPIRE • INNOVATE • IMPACT AFRICA</strong></p>
+
+        <br>
+
+        <p>Version 1.1 is currently under development.</p>
+
+    </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const page = params.get("page");
+
+if(page){
+
+    document.getElementById("pageTitle").textContent = page;
+
+    document.getElementById("pageSubtitle").textContent = "Coming Soon";
+
+    document.title = page + " | African Industrial Revolution";
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -415,11 +415,14 @@ body{
     overflow:visible;
 }
 
-    #africaMap{
-
-        height:600px;
-
-    }
+   #africaMap{
+    width:100%;
+    height:55vh;
+    min-height:420px;
+    max-height:500px;
+    display:block;
+    margin:10px auto;
+}
 
 }
 
@@ -445,13 +448,14 @@ body{
         font-size:16px;
     }
 
-    #africaMap{
-        width:100%;
-        height:75vh;
-        min-height:600px;
-        display:block;
-        margin:10px auto;
-    }
+  #africaMap{
+    width:100%;
+    height:55vh;
+    min-height:420px;
+    max-height:500px;
+    display:block;
+    margin:10px auto;
+}
 
     .info-panel{
         height:auto;
@@ -516,4 +520,325 @@ body{
 .sponsor-item:hover{
     background:#00AEEF;
     color:#fff;
+}
+/*=========================================
+  STRATEGIC PARTNERS & SUPPORTERS
+==========================================*/
+
+.partner-section{
+
+    margin-top:40px;
+    padding:35px 20px;
+    background:#ffffff;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.partner-section h2{
+
+    color:#081B29;
+    font-size:30px;
+    margin-bottom:15px;
+
+}
+
+.partner-section p{
+
+    max-width:800px;
+    margin:0 auto 30px;
+    color:#555;
+    line-height:1.7;
+
+}
+
+.partner-slider{
+
+    width:100%;
+    overflow:hidden;
+    position:relative;
+
+}
+
+.partner-track{
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+    width:max-content;
+
+    animation:partnerScroll 35s linear infinite;
+
+}
+
+.partner-track:hover{
+
+    animation-play-state:paused;
+
+}
+
+.partner-card{
+
+    min-width:180px;
+    background:#fff;
+    border-radius:18px;
+    padding:18px;
+    border:2px solid #e6e6e6;
+    transition:.35s;
+    flex-shrink:0;
+
+}
+
+.partner-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#0E6B38;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+}
+
+.partner-card img{
+
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    margin-bottom:12px;
+
+}
+
+.partner-card h4{
+
+    color:#081B29;
+    font-size:16px;
+
+}
+
+@keyframes partnerScroll{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/*==========================
+ Mobile
+===========================*/
+
+@media(max-width:768px){
+
+.partner-section{
+
+padding:25px 15px;
+
+}
+
+.partner-section h2{
+
+font-size:24px;
+
+}
+
+.partner-section p{
+
+font-size:15px;
+
+}
+
+.partner-card{
+
+min-width:150px;
+
+padding:15px;
+
+}
+
+.partner-card img{
+
+width:60px;
+
+height:60px;
+
+}
+
+.partner-track{
+
+gap:18px;
+
+animation-duration:25s;
+
+}
+
+}
+/*=========================================
+        AIR CONTACT BAR
+=========================================*/
+
+.air-footer{
+
+    background:#081B29;
+
+    padding:30px 20px 20px;
+
+    text-align:center;
+
+}
+
+.contact-air-bar{
+
+    max-width:1000px;
+
+    margin:auto;
+
+}
+
+.contact-air-bar a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    text-decoration:none;
+
+    background:#10293d;
+
+    border:2px solid #0E6B38;
+
+    border-radius:50px;
+
+    padding:14px 28px;
+
+    transition:.35s;
+
+    color:white;
+
+}
+
+.contact-air-bar a:hover{
+
+    background:#0E6B38;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.contact-icon{
+
+    font-size:26px;
+
+}
+
+.contact-text{
+
+    flex:1;
+
+    text-align:left;
+
+    font-size:18px;
+
+    letter-spacing:.3px;
+
+}
+
+.contact-text strong{
+
+    color:#F7941D;
+
+}
+
+.divider{
+
+    color:white;
+
+    margin:0 10px;
+
+}
+
+.contact-arrow{
+
+    font-size:28px;
+
+    color:#F7941D;
+
+    transition:.35s;
+
+}
+
+.contact-air-bar a:hover .contact-arrow{
+
+    transform:translateX(8px);
+
+}
+
+.copyright{
+
+    margin-top:25px;
+
+    color:#b8c7d1;
+
+    font-size:14px;
+
+}
+
+/*==========================
+      Mobile
+==========================*/
+
+@media(max-width:768px){
+
+.contact-air-bar a{
+
+padding:12px 18px;
+
+}
+
+.contact-icon{
+
+font-size:22px;
+
+}
+
+.contact-text{
+
+font-size:15px;
+
+}
+
+.contact-arrow{
+
+font-size:22px;
+
+}
+
+.divider{
+
+display:none;
+
+}
+
+.contact-text strong{
+
+display:block;
+
+margin-bottom:3px;
+
+}
+
 }
