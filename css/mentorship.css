@@ -1,0 +1,652 @@
+/* ==========================================
+   AIR Mentorship Network
+========================================== */
+
+:root{
+
+    --air-green:#1E8E3E;
+    --air-orange:#F7931E;
+    --air-red:#D32F2F;
+    --air-blue:#0D2B52;
+
+    --text:#444;
+    --light:#f7f9fc;
+    --white:#ffffff;
+
+    --shadow:0 12px 35px rgba(0,0,0,.08);
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    color:var(--text);
+
+    background:#fff;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.mentorship-page{
+
+    overflow:hidden;
+
+}
+
+.mentorship-page section{
+
+    padding:60px 8%;
+
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#EAF7EE;
+
+    color:var(--air-green);
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+/* ==============================
+            HERO
+============================== */
+
+.about-hero{
+
+    background:linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f5fbf7 100%
+    );
+
+    min-height:700px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.hero-text{
+
+    max-width:620px;
+
+}
+
+.hero-text h1{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    margin:20px 0 30px;
+
+}
+
+.hero-description{
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:#666;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-primary{
+
+    background:var(--air-green);
+
+    color:#fff;
+
+    padding:16px 34px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--air-orange);
+
+    transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+    border:2px solid var(--air-green);
+
+    color:var(--air-green);
+
+    padding:16px 34px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--air-green);
+
+    color:white;
+
+}
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:650px;
+
+    border-radius:30px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+.hero-line{
+
+    width:180px;
+
+    height:6px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #1E8E3E,
+        #F7931E,
+        #D32F2F
+    );
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================
+   PROGRAMME EXPLORER
+========================================== */
+
+.quick-nav{
+
+    background:var(--light);
+
+    text-align:center;
+
+}
+
+.quick-nav h2{
+
+    color:var(--air-blue);
+
+    font-size:2rem;
+
+    margin-bottom:10px;
+
+}
+
+.quick-nav p{
+
+    color:#666;
+
+    margin-bottom:50px;
+
+}
+
+.nav-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.nav-card{
+
+    background:white;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    padding:35px 25px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.nav-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.nav-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.nav-card h3{
+
+    color:var(--air-blue);
+
+    margin-bottom:10px;
+
+}
+
+.nav-card span{
+
+    color:#666;
+
+    font-size:.9rem;
+
+}
+/* ==========================================
+   ACCORDION
+========================================== */
+
+.accordion-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.accordion-item{
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    margin-bottom:25px;
+
+    overflow:hidden;
+
+    border-left:6px solid var(--air-green);
+
+}
+
+.accordion-header{
+
+    width:100%;
+
+    background:white;
+
+    border:none;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.accordion-header:hover{
+
+    background:#f8fbfd;
+
+}
+
+.accordion-header h2{
+
+    color:var(--air-blue);
+
+    margin-bottom:10px;
+
+}
+
+.accordion-header p{
+
+    color:#666;
+
+}
+
+.accordion-icon{
+
+    font-size:1.3rem;
+
+    color:var(--air-green);
+
+    transition:.35s;
+
+}
+
+.accordion-item.active .accordion-icon{
+
+    transform:rotate(180deg);
+
+}
+
+.accordion-content{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .5s ease;
+
+    padding:0 30px;
+
+}
+
+.accordion-item.active .accordion-content{
+
+    max-height:5000px;
+
+    padding:30px;
+
+    border-top:1px solid #eee;
+
+}
+/* ==========================================
+   ACCORDION CONTENT
+========================================== */
+
+.content-wrapper{
+
+    display:grid;
+
+    grid-template-columns:350px 1fr;
+
+    gap:40px;
+
+    align-items:start;
+
+}
+
+.content-image img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.content-text h2{
+
+    color:var(--air-blue);
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+
+}
+
+.content-text p{
+
+    line-height:1.9;
+
+    color:#555;
+
+    margin-bottom:20px;
+
+    text-align:justify;
+
+}
+/* ==========================================
+   AIR Colours
+========================================== */
+
+.accordion-item:nth-child(1){
+
+    border-left-color:var(--air-green);
+
+}
+
+.accordion-item:nth-child(2){
+
+    border-left-color:var(--air-orange);
+
+}
+
+.accordion-item:nth-child(3){
+
+    border-left-color:var(--air-blue);
+
+}
+
+.accordion-item:nth-child(4){
+
+    border-left-color:var(--air-red);
+
+}
+
+.accordion-item:nth-child(5){
+
+    border-left-color:var(--air-green);
+
+}
+
+.accordion-item:nth-child(6){
+
+    border-left-color:var(--air-orange);
+
+}
+
+.accordion-item:nth-child(7){
+
+    border-left-color:var(--air-blue);
+
+}
+
+.accordion-item:nth-child(8){
+
+    border-left-color:var(--air-red);
+
+}
+blockquote{
+
+    margin:35px 0;
+
+    padding:20px 25px;
+
+    background:#f8f9fc;
+
+    border-left:5px solid var(--air-green);
+
+    font-size:1.2rem;
+
+    font-style:italic;
+
+    color:var(--air-blue);
+
+    line-height:1.7;
+
+}
+.join-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.mentorship-page section{
+
+    padding:60px 20px;
+
+}
+
+/* HERO */
+
+.hero-grid{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.hero-image{
+
+    order:-1;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:350px;
+
+    margin:auto;
+
+}
+
+.hero-text{
+
+    text-align:center;
+
+}
+
+.hero-text h1{
+
+    font-size:2.5rem;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.nav-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.accordion-header{
+
+    padding:20px;
+
+}
+
+.accordion-header h2{
+
+    font-size:1.2rem;
+
+}
+.content-wrapper{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.content-image{
+
+    margin-bottom:25px;
+
+}
+
+}

@@ -102,7 +102,11 @@ body{
 
     flex:1;
 
-    min-height:760px;
+    display:flex;
+
+    flex-direction:column;
+
+    align-self:stretch;
 
     background:#0f2c45;
 
@@ -191,7 +195,9 @@ body{
 
     flex-direction:column;
 
-    height:760px;
+    flex:1;
+
+    align-self:stretch;
 
     overflow:hidden;
 
@@ -409,110 +415,71 @@ body{
 
     }
 
-    .info-panel{
+   .info-panel{
+    height:auto;
+    min-height:auto;
+    overflow:visible;
+}
 
-        width:100%;
-
-        min-height:auto;
-
-    }
-
-    #africaMap{
-
-        height:600px;
-
-    }
+   #africaMap{
+    width:100%;
+    height:55vh;
+    min-height:420px;
+    max-height:500px;
+    display:block;
+    margin:10px auto;
+}
 
 }
 
 @media(max-width:768px){
 
     .map-section{
+        padding:10px;
+    }
 
-        padding:20px;
+    .map-container{
+        gap:15px;
+    }
 
+    .map{
+        padding:10px;
     }
 
     .map-section h1{
-
-        font-size:34px;
-
+        font-size:32px;
     }
 
     .map-section p{
-
         font-size:16px;
-
     }
 
-    #africaMap{
+  #africaMap{
+    width:100%;
+    height:55vh;
+    min-height:420px;
+    max-height:500px;
+    display:block;
+    margin:10px auto;
+}
 
-        height:450px;
+    .info-panel{
+        height:auto;
+        min-height:auto;
+        overflow:visible;
+    }
 
+    .regions-section{
+        height:auto;
+    }
+
+    #regionsContainer{
+        max-height:none;
+        overflow:visible;
     }
 
 }
 
-
-/* ===================================
-   SITE BRANDING
-=================================== */
-
-.site-brand{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.site-brand h1{
-    font-size:46px;
-    color:#fff;
-    margin-bottom:8px;
-}
-
-.site-brand p{
-    color:#c9d4dc;
-    font-size:20px;
-    margin-bottom:20px;
-}
-
-/* ===================================
-   TOP NAVIGATION
-=================================== */
-
-.top-nav{
-    margin:0 auto 25px;
-    max-width:1200px;
-    overflow:visible;
-}
-
-.top-nav ul{
-    list-style:none;
-    display:flex;
-    flex-wrap:nowrap;
-    gap:18px;
-    justify-content:center;
-    white-space:nowrap;
-    padding:0;
-}
-
-.top-nav::-webkit-scrollbar{
-    display:none;
-}
-
-.top-nav a{
-    color:#fff;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:600;
-    padding:8px 4px;
-    border-bottom:2px solid transparent;
-    transition:.3s;
-}
-
-.top-nav a:hover{
-    color:#00AEEF;
-    border-bottom-color:#00AEEF;
-}
 
 .map-subtitle{
     color:#555;
@@ -526,143 +493,197 @@ body{
 =================================== */
 
 .sponsor-strip{
-
     margin-top:25px;
-
     border-top:2px solid #e5e5e5;
-
     padding-top:15px;
-
 }
 
 .sponsor-strip h3{
-
     text-align:center;
-
     color:#333;
-
     margin-bottom:15px;
-
     font-size:20px;
-
 }
 
 .sponsor-slider{
-
     display:flex;
-
     justify-content:space-around;
-
     align-items:center;
-
     gap:15px;
-
     flex-wrap:wrap;
-
 }
 
 .sponsor-item{
-
     background:#f4f4f4;
-
     color:#333;
-
     padding:10px 18px;
-
     border-radius:30px;
-
     font-weight:bold;
-
     border:1px solid #ddd;
-
     transition:.3s;
-
 }
 
 .sponsor-item:hover{
-
     background:#00AEEF;
-
     color:#fff;
+}
+/*=========================================
+  STRATEGIC PARTNERS & SUPPORTERS
+==========================================*/
+
+.partner-section{
+
+    margin-top:40px;
+    padding:35px 20px;
+    background:#ffffff;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
 
 }
 
-/* ===================================
-   MOBILE NAVIGATION
-=================================== */
+.partner-section h2{
+
+    color:#081B29;
+    font-size:30px;
+    margin-bottom:15px;
+
+}
+
+.partner-section p{
+
+    max-width:800px;
+    margin:0 auto 30px;
+    color:#555;
+    line-height:1.7;
+
+}
+
+.partner-slider{
+
+    width:100%;
+    overflow:hidden;
+    position:relative;
+
+}
+
+.partner-track{
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+    width:max-content;
+
+    animation:partnerScroll 35s linear infinite;
+
+}
+
+.partner-track:hover{
+
+    animation-play-state:paused;
+
+}
+
+.partner-card{
+
+    min-width:180px;
+    background:#fff;
+    border-radius:18px;
+    padding:18px;
+    border:2px solid #e6e6e6;
+    transition:.35s;
+    flex-shrink:0;
+
+}
+
+.partner-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#0E6B38;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+}
+
+.partner-card img{
+
+    width:80px;
+    height:80px;
+    object-fit:contain;
+    margin-bottom:12px;
+
+}
+
+.partner-card h4{
+
+    color:#081B29;
+    font-size:16px;
+
+}
+
+@keyframes partnerScroll{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+/*==========================
+ Mobile
+===========================*/
+
 @media(max-width:768px){
 
-    .top-nav ul{
+.partner-section{
 
-        flex-wrap:wrap;
-
-        justify-content:center;
-
-        gap:10px 18px;
-
-    }
-
-    .top-nav ul li ul{
-
-        position:static;
-
-        display:none;
-
-        width:100%;
-
-        margin-top:8px;
-
-        box-shadow:none;
-
-        border-radius:8px;
-
-    }
-
-    .top-nav ul li:hover > ul{
-
-        display:block;
-
-    }
-
-    .top-nav ul li ul li ul{
-
-        position:static;
-
-        margin-left:20px;
-
-    }
+padding:25px 15px;
 
 }
-/* ===================================
-   DROPDOWN MENU
-=================================== */
 
-.top-nav{position:relative;z-index:10000;}
-.top-nav ul{list-style:none;display:flex;justify-content:center;align-items:center;gap:18px;margin:0;padding:0;}
-.top-nav li{position:relative;}
-.top-nav li>a{display:block;color:#fff;text-decoration:none;font-size:15px;font-weight:600;padding:10px 8px;border-bottom:2px solid transparent;transition:.3s;}
-.top-nav li>a:hover{color:#00AEEF;border-bottom-color:#00AEEF;}
+.partner-section h2{
 
-.dropdown-menu{
-display:none;
-position:absolute;
-top:100%;
-left:0;
-min-width:260px;
-background:#fff;
-border-radius:12px;
-list-style:none;
-padding:8px 0;
-margin-top:4px;
-box-shadow:0 12px 30px rgba(0,0,0,.25);
-z-index:10001;
+font-size:24px;
+
 }
 
-.dropdown:hover>.dropdown-menu{display:block;}
+.partner-section p{
 
-.dropdown-menu li{display:block;width:100%;}
-.dropdown-menu li a{display:block;width:100%;padding:12px 18px;color:#333;text-decoration:none;white-space:nowrap;}
-.dropdown-menu li:hover{background:#f3f6f8;}
+font-size:15px;
 
-.map{position:relative;overflow:visible;z-index:1;}
-#africaMap{position:relative;z-index:1;}
+}
+
+.partner-card{
+
+min-width:150px;
+
+padding:15px;
+
+}
+
+.partner-card img{
+
+width:60px;
+
+height:60px;
+
+}
+
+.partner-track{
+
+gap:18px;
+
+animation-duration:25s;
+
+}
+
+}

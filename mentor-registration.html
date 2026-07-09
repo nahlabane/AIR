@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        AIR Volunteer Mentor Registration
+
+    </title>
+
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/forms.css">
+
+</head>
+
+<body>
+
+<div id="header"></div>
+
+<section>
+
+<div class="container">
+
+<h2 class="form-title">
+
+    Volunteer Mentor Registration
+
+</h2>
+
+<p class="form-description">
+
+    Join the AIR Mentorship & Academic Support Network and help support
+    learners across Africa through academic mentorship, educational
+    content and knowledge sharing.
+
+</p>
+
+<form id="mentorForm">
+
+<!-- ========================================= -->
+<!-- COUNTRY -->
+<!-- ========================================= -->
+
+<div class="form-group">
+
+    <label>
+
+        Country <span>*</span>
+
+    </label>
+
+    <select
+        id="country"
+        name="country"
+        required>
+
+        <option value="">
+
+            Select Country
+
+        </option>
+
+        <!-- Countries will remain here -->
+
+        <option>Algeria</option>
+        <option>Angola</option>
+        <option>Benin</option>
+        <option>Botswana</option>
+        <option>Burkina Faso</option>
+        <option>Burundi</option>
+        <option>Cabo Verde</option>
+        <option>Cameroon</option>
+        <option>Central African Republic</option>
+        <option>Chad</option>
+        <option>Comoros</option>
+        <option>Democratic Republic of the Congo</option>
+        <option>Republic of the Congo</option>
+        <option>Djibouti</option>
+        <option>Egypt</option>
+        <option>Equatorial Guinea</option>
+        <option>Eritrea</option>
+        <option>Eswatini</option>
+        <option>Ethiopia</option>
+        <option>Gabon</option>
+        <option>Gambia</option>
+        <option>Ghana</option>
+        <option>Guinea</option>
+        <option>Guinea-Bissau</option>
+        <option>Ivory Coast</option>
+        <option>Kenya</option>
+        <option>Lesotho</option>
+        <option>Liberia</option>
+        <option>Libya</option>
+        <option>Madagascar</option>
+        <option>Malawi</option>
+        <option>Mali</option>
+        <option>Mauritania</option>
+        <option>Mauritius</option>
+        <option>Morocco</option>
+        <option>Mozambique</option>
+        <option>Namibia</option>
+        <option>Niger</option>
+        <option>Nigeria</option>
+        <option>Rwanda</option>
+        <option>Sao Tome and Principe</option>
+        <option>Senegal</option>
+        <option>Seychelles</option>
+        <option>Sierra Leone</option>
+        <option>Somalia</option>
+        <option>South Africa</option>
+        <option>South Sudan</option>
+        <option>Sudan</option>
+        <option>Tanzania</option>
+        <option>Togo</option>
+        <option>Tunisia</option>
+        <option>Uganda</option>
+        <option>Zambia</option>
+        <option>Zimbabwe</option>
+
+    </select>
+
+</div>
+
+<!-- ========================================= -->
+<!-- EVERYTHING BELOW IS HIDDEN -->
+<!-- ========================================= -->
+
+<div id="registrationContent"
+     style="display:none;">
+     <!-- ========================================= -->
+<!-- AIR MENTORSHIP PROGRAMME -->
+<!-- ========================================= -->
+
+<section id="airProgramme">
+
+    <h2>
+
+        AIR Mentorship Programme
+
+    </h2>
+
+    <p>
+
+        The information below is based on the country you selected.
+        AIR programmes differ from one country to another depending on
+        the number of volunteer mentors currently available.
+
+    </p>
+
+    <div id="programmeCard"
+         class="programme-notice">
+
+        <h3 id="programmeCountry">
+
+            AIR Programme
+
+        </h3>
+
+        <div id="programmeStatus">
+
+        </div>
+
+        <p id="programmeDescription">
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- SUBJECTS -->
+<!-- ========================================= -->
+
+<section id="mentorSubjects">
+
+    <h2>
+
+        Subjects Available for Mentoring
+
+    </h2>
+
+    <p>
+
+        Select every subject you are comfortable mentoring.
+        AIR welcomes registrations for both active subjects and
+        subjects that are still recruiting volunteer mentors.
+
+    </p>
+
+    <div id="programmeSubjects">
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- SUBJECT SELECTION -->
+<!-- ========================================= -->
+
+<section id="subjectSelection">
+
+    <h2>
+
+        Your Mentoring Subjects
+
+    </h2>
+
+    <p>
+
+        Choose the subjects you are willing to mentor.
+
+    </p>
+
+    <div id="mentorSubjectCheckboxes">
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- PERSONAL INFORMATION -->
+<!-- ========================================= -->
+
+<section id="personalInformation">
+
+    <h2>
+
+        Personal Information
+
+    </h2>
+
+    <p>
+
+        Please provide your personal information so AIR can contact you
+        regarding your volunteer mentor application.
+
+    </p>
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>
+
+                Full Name <span>*</span>
+
+            </label>
+
+            <input
+                type="text"
+                name="fullname"
+                placeholder="Enter your full name"
+                required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>
+
+                Email Address <span>*</span>
+
+            </label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email address"
+                required>
+
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>
+
+                Phone / WhatsApp Number <span>*</span>
+
+            </label>
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone or WhatsApp number"
+                required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>
+
+                Province / State / Region
+
+            </label>
+
+            <input
+                type="text"
+                name="region"
+                placeholder="Province, State or Region">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- PROFESSIONAL INFORMATION -->
+<!-- ========================================= -->
+
+<section id="professionalInformation">
+
+    <h2>
+
+        Professional Information
+
+    </h2>
+
+    <p>
+
+        Help AIR understand your educational background and current
+        profession.
+
+    </p>
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>
+
+                Highest Qualification <span>*</span>
+
+            </label>
+
+            <input
+                type="text"
+                name="qualification"
+                placeholder="Example: BSc Mechanical Engineering"
+                required>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>
+
+                Current Occupation <span>*</span>
+
+            </label>
+
+            <input
+                type="text"
+                name="occupation"
+                placeholder="Teacher, Engineer, Lecturer, Student..."
+                required>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- MENTORING ACTIVITIES -->
+<!-- ========================================= -->
+
+<section id="mentoringActivities">
+
+    <h2>
+
+        How Would You Like to Contribute?
+
+    </h2>
+
+    <p>
+
+        AIR offers different ways for volunteer mentors to support learners.
+        Select all the activities you are comfortable participating in.
+
+    </p>
+
+    <div class="checkbox-grid">
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="activities"
+                value="One-on-One Mentoring">
+
+            One-on-One Mentoring
+
+        </label>
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="activities"
+                value="Group Mentoring">
+
+            Group Mentoring Sessions
+
+        </label>
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="activities"
+                value="Live Classes">
+
+            Live Online Classes
+
+        </label>
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="activities"
+                value="Question Support">
+
+            Answer Learner Questions
+
+        </label>
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="activities"
+                value="Exam Preparation">
+
+            Exam Preparation Sessions
+
+        </label>
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="activities"
+                value="Homework Support">
+
+            Homework & Assignment Support
+
+        </label>
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="activities"
+                value="Career Guidance">
+
+            Career Guidance
+
+        </label>
+
+        <label>
+
+            <input
+                type="checkbox"
+                name="activities"
+                value="University Guidance">
+
+            University Application Guidance
+
+        </label>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- EDUCATIONAL CONTENT -->
+<!-- ========================================= -->
+
+<section id="educationalContent">
+
+    <h2>
+
+        Educational Content
+
+    </h2>
+
+    <p>
+
+        AIR is building a free digital learning library for learners across
+        Africa. Would you be willing to help create educational content?
+
+    </p>
+
+    <div class="form-group">
+
+        <label>
+
+            Would you like to create educational content?
+
+        </label>
+
+        <select
+            id="videoSupport"
+            name="videoSupport">
+
+            <option value="">Select</option>
+
+            <option value="Yes">Yes</option>
+
+            <option value="No">No</option>
+
+            <option value="Future">Maybe in Future</option>
+
+        </select>
+
+    </div>
+
+    <div id="videoOptions" style="display:none;">
+
+        <div class="checkbox-grid">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    name="contentType"
+                    value="Recorded Lessons">
+
+                Recorded Lessons
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    name="contentType"
+                    value="Live Lessons">
+
+                Live Lessons
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    name="contentType"
+                    value="Presentation Slides">
+
+                Presentation Slides
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    name="contentType"
+                    value="Practical Demonstrations">
+
+                Practical Demonstrations
+
+            </label>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    name="contentType"
+                    value="Worked Solutions">
+
+                Worked Solutions
+
+            </label>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- AVAILABILITY -->
+<!-- ========================================= -->
+
+<section id="mentorAvailability">
+
+    <h2>
+
+        Availability
+
+    </h2>
+
+    <p>
+
+        Please let us know when you are normally available to support
+        learners. This information helps AIR schedule mentoring sessions.
+
+    </p>
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>
+
+                Preferred Day(s)
+
+            </label>
+
+            <div class="checkbox-grid">
+
+                <label><input type="checkbox" name="days" value="Monday"> Monday</label>
+
+                <label><input type="checkbox" name="days" value="Tuesday"> Tuesday</label>
+
+                <label><input type="checkbox" name="days" value="Wednesday"> Wednesday</label>
+
+                <label><input type="checkbox" name="days" value="Thursday"> Thursday</label>
+
+                <label><input type="checkbox" name="days" value="Friday"> Friday</label>
+
+                <label><input type="checkbox" name="days" value="Saturday"> Saturday</label>
+
+                <label><input type="checkbox" name="days" value="Sunday"> Sunday</label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group">
+
+            <label>
+
+                Preferred Time
+
+            </label>
+
+            <select name="preferredTime">
+
+                <option value="">Select</option>
+
+                <option>Morning</option>
+
+                <option>Afternoon</option>
+
+                <option>Evening</option>
+
+                <option>Flexible</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label>
+
+                Hours Available Per Week
+
+            </label>
+
+            <select name="hoursPerWeek">
+
+                <option value="">Select</option>
+
+                <option>1–2 Hours</option>
+
+                <option>3–5 Hours</option>
+
+                <option>6–10 Hours</option>
+
+                <option>More than 10 Hours</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- COMMUNICATION -->
+<!-- ========================================= -->
+
+<section id="communication">
+
+    <h2>
+
+        Communication
+
+    </h2>
+
+    <p>
+
+        AIR operates across Africa. Please tell us the language(s) you are
+        comfortable using during mentoring sessions.
+
+    </p>
+
+    <div class="form-group">
+
+        <label>
+
+            Languages You Can Mentor In
+
+        </label>
+
+        <input
+            type="text"
+            name="languages"
+            placeholder="Example: English, Kiswahili, isiZulu, French">
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- EQUIPMENT -->
+<!-- ========================================= -->
+
+<section id="equipment">
+
+    <h2>
+
+        Equipment & Internet Access
+
+    </h2>
+
+    <p>
+
+        AIR mentoring is primarily conducted online. Please select the
+        resources you currently have available.
+
+    </p>
+
+    <div class="checkbox-grid">
+
+        <label><input type="checkbox" name="equipment" value="Smartphone"> Smartphone</label>
+
+        <label><input type="checkbox" name="equipment" value="Laptop"> Laptop</label>
+
+        <label><input type="checkbox" name="equipment" value="Desktop Computer"> Desktop Computer</label>
+
+        <label><input type="checkbox" name="equipment" value="Tablet"> Tablet</label>
+
+        <label><input type="checkbox" name="equipment" value="Stable Internet"> Stable Internet</label>
+
+        <label><input type="checkbox" name="equipment" value="Webcam"> Webcam</label>
+
+        <label><input type="checkbox" name="equipment" value="Microphone"> Microphone</label>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- MOTIVATION -->
+<!-- ========================================= -->
+
+<section id="motivation">
+
+    <h2>
+
+        Why Do You Want to Volunteer?
+
+    </h2>
+
+    <p>
+
+        Tell us why you would like to become an AIR Volunteer Mentor and
+        how you hope to contribute to education across Africa.
+
+    </p>
+
+    <div class="form-group">
+
+        <textarea
+            rows="6"
+            name="motivation"
+            placeholder="Share your motivation..."></textarea>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- DECLARATION -->
+<!-- ========================================= -->
+
+<section id="declaration">
+
+    <h2>
+
+        Declaration
+
+    </h2>
+
+    <p>
+
+        Before submitting your application, please confirm that the
+        information you have provided is accurate and that you understand
+        the volunteer nature of the AIR Mentorship & Academic Support
+        Network.
+
+    </p>
+
+    <div class="checkbox-group">
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="declarationCheck"
+                required>
+
+            I confirm that the information provided in this application is
+            true and accurate to the best of my knowledge.
+
+        </label>
+
+    </div>
+
+    <div class="checkbox-group">
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="volunteerCheck"
+                required>
+
+            I understand that AIR mentorship is currently a voluntary
+            programme and that submitting this application does not
+            guarantee immediate appointment as an AIR Volunteer Mentor.
+
+        </label>
+
+    </div>
+
+    <div class="checkbox-group">
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="privacyCheck"
+                required>
+
+            I consent to AIR securely storing my information for mentor
+            registration, programme management and communication purposes.
+
+        </label>
+
+    </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- SUBMIT -->
+<!-- ========================================= -->
+
+<section id="submitSection">
+
+    <button
+        type="submit"
+        class="btn">
+
+        Join AIR as a Volunteer Mentor
+
+    </button>
+
+</section>
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<div id="footer"></div>
+
+<script src="js/mentor-registration.js"></script>
+
+<script src="js/includes.js"></script>
+
+</body>
+
+</html>

@@ -1,157 +1,88 @@
 <!DOCTYPE html>
 
 <html lang="en">
+<head><link href="css/navigation.css" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>African Industrial Revolution (AIR) - Volunteer Registration</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>African Industrial Revolution (AIR) - Volunteer Registration</title>
-
-```
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>African Industrial Revolution (AIR) - Volunteer Registration</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>African Industrial Revolution (AIR) - Volunteer Registration</title>
 
-```
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="forms.css">
-```
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/forms.css" rel="stylesheet"/>
+
 </head>
-
 <body>
-
-```
-<header>
-    <div class="container">
-        <h1>African Industrial Revolution (AIR)</h1>
-        
-    </div>
-</header>
-
+<div id="header"></div>
 <section>
-    <div class="container">
-
-        <h2>Volunteer Registration</h2>
-<a href="index.html" class="btn">← Back to Home</a>
-        <p class="form-description">
+<div class="container">
+<h2>Volunteer Registration</h2>
+<p class="form-description">
             Join AIR and help empower learners across Africa through mentorship,
             education, technology, research and innovation.
         </p>
-
-      <form id="volunteerForm">
-
-    <label>Full Name</label>
-    <input type="text"
-           name="fullname"
-           placeholder="Enter your full name"
-           required>
-
-    <label>Email Address</label>
-    <input type="email"
-           name="email"
-           placeholder="Enter your email address"
-           required>
-
-    <label>Country</label>
-    <input type="text"
-           name="country"
-           placeholder="Enter your country"
-           required>
-
-    <label>Profession</label>
-    <input type="text"
-           name="profession"
-           placeholder="Profession or occupation"
-           required>
-
-    <label>Highest Qualification</label>
-    <input type="text"
-           name="qualification"
-           placeholder="Highest qualification obtained"
-           required>
-
-    <label>AIR Programme</label>
-
-    <select name="programme" id="programme" required>
-
-        <option value="">Select Programme</option>
-
-        <option>AIR Mentorship & Academic Support Network</option>
-        <option>AIR Tech Academy</option>
-      <!-- <option>AIR Administration & Support Services</option>-->
-
-    </select>
-
-    <label>Area of Specialization</label>
-
-    <select name="specialization" id="specialization" required>
-
-    <option value="">
+<form id="volunteerForm">
+<label>Full Name</label>
+<input name="fullname" placeholder="Enter your full name" required="" type="text"/>
+<label>Email Address</label>
+<input name="email" placeholder="Enter your email address" required="" type="email"/>
+<label>Country</label>
+<input name="country" placeholder="Enter your country" required="" type="text"/>
+<label>Profession</label>
+<input name="profession" placeholder="Profession or occupation" required="" type="text"/>
+<label>Highest Qualification</label>
+<input name="qualification" placeholder="Highest qualification obtained" required="" type="text"/>
+<label>AIR Programme</label>
+<select id="programme" name="programme" required="">
+<option value="">Select Programme</option>
+<option>AIR Mentorship &amp; Academic Support Network</option>
+<option>AIR Tech Academy</option>
+<!-- <option>AIR Administration & Support Services</option>-->
+</select>
+<label>Area of Specialization</label>
+<select id="specialization" name="specialization" required="">
+<option value="">
         Select Area of Specialization
     </option>
-
-
-    </select>
-
-    <label>Qualifications, Experience and Skills</label>
-
-    <textarea name="skills"
-              rows="5"
-              placeholder="Tell us about your qualifications, experience and skills."
-              required></textarea>
-
-    <label>Languages Spoken</label>
-
-    <input type="text"
-           name="languages"
-           placeholder="Example: English, French, Swahili">
-
-    <label>Availability</label>
-
-    <select name="availability" required>
-
-        <option value="">Select Availability</option>
-        <option>Weekdays</option>
-        <option>Weekends</option>
-        <option>Evenings</option>
-        <option>Flexible</option>
-
-    </select>
-
-    <div class="checkbox-group">
-        <label>
-            <input type="checkbox" required>
+</select>
+<label>Qualifications, Experience and Skills</label>
+<textarea name="skills" placeholder="Tell us about your qualifications, experience and skills." required="" rows="5"></textarea>
+<label>Languages Spoken</label>
+<input name="languages" placeholder="Example: English, French, Swahili" type="text"/>
+<label>Availability</label>
+<select name="availability" required="">
+<option value="">Select Availability</option>
+<option>Weekdays</option>
+<option>Weekends</option>
+<option>Evenings</option>
+<option>Flexible</option>
+</select>
+<div class="checkbox-group">
+<label>
+<input required="" type="checkbox"/>
             I agree to follow AIR policies, code of conduct and safeguarding guidelines.
         </label>
-    </div>
-
-    <div class="checkbox-group">
-        <label>
-            <input type="checkbox" required>
+</div>
+<div class="checkbox-group">
+<label>
+<input required="" type="checkbox"/>
             I understand that I am volunteering voluntarily and I am not an employee of AIR.
         </label>
-    </div>
-
-    <button type="submit" class="btn">
+</div>
+<button class="btn" type="submit">
         Submit Volunteer Application
     </button>
-
 </form>
-
-    </div>
+</div>
 </section>
-
-<footer>
-    <div class="container">
-        <p>© 2026 African Industrial Revolution (AIR)</p>
-    </div>
-</footer>
-```<script>
+<div id="footer"></div>
+<script>
     //alert("JavaScript Loaded");
 // =========================
 // DEPENDENT DROPDOWN
@@ -282,8 +213,6 @@ form.addEventListener("submit", function (e) {
 
 });
 </script>
-</body>
-
-
-
+<script src="js/includes.js"></script></body>
 </html>
+</head></html>

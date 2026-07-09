@@ -1,0 +1,1218 @@
+/* ==========================================
+   ABOUT AIR
+   African Industrial Revolution
+========================================== */
+
+:root{
+
+    --air-green:#1E8E3E;
+    --air-orange:#F7931E;
+    --air-red:#D32F2F;
+    --air-blue:#0D2B52;
+
+    --text:#333;
+    --light:#f8f9fb;
+    --white:#ffffff;
+
+    --shadow:0 12px 35px rgba(0,0,0,.08);
+
+}
+*{
+
+    box-sizing:border-box;
+
+}
+.about-page{
+
+    background:#fff;
+    overflow:hidden;
+
+}
+
+/* ==============================
+        GLOBAL SECTION
+============================== */
+
+.about-page section{
+
+    padding:90px 8%;
+
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    background:#EAF7EE;
+
+    color:var(--air-green);
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+}
+
+.section-title{
+
+    text-align:center;
+
+    max-width:800px;
+
+    margin:auto auto 60px;
+
+}
+
+.section-title h2{
+
+    font-size:2.5rem;
+
+    color:var(--air-blue);
+
+    margin-bottom:20px;
+
+}
+
+.section-title p{
+
+    font-size:1.05rem;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+/* ==============================
+            HERO
+============================== */
+
+.about-hero{
+
+    background:linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f5fbf7 100%
+    );
+
+    min-height:700px;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.hero-text{
+
+    max-width:620px;
+
+}
+
+.hero-text h1{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    margin:20px 0 30px;
+
+}
+
+.hero-description{
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+
+    color:#666;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-primary{
+
+    background:var(--air-green);
+
+    color:#fff;
+
+    padding:16px 34px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--air-orange);
+
+    transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+    border:2px solid var(--air-green);
+
+    color:var(--air-green);
+
+    padding:16px 34px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.btn-secondary:hover{
+
+    background:var(--air-green);
+
+    color:white;
+
+}
+.hero-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:650px;
+
+    border-radius:30px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+
+}
+.hero-line{
+
+    width:180px;
+
+    height:6px;
+
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #1E8E3E,
+        #F7931E,
+        #D32F2F
+    );
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================
+   WHO WE ARE
+========================================== */
+
+.about-story{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.story-image{
+
+    text-align:center;
+
+}
+
+.story-image img{
+
+    width:100%;
+
+    max-width:550px;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.story-image img:hover{
+
+    transform:scale(1.02);
+
+}
+
+.story-content h2{
+
+    font-size:2.6rem;
+
+    color:var(--air-blue);
+
+    margin:15px 0 25px;
+
+}
+
+.story-content p{
+
+    color:#666;
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+}
+/* ==========================================
+   VISION & MISSION
+========================================== */
+
+.vision-mission{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+.vision-card,
+.mission-card{
+
+    background:#fff;
+
+    padding:45px;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.vision-card{
+
+    border-top:6px solid var(--air-green);
+
+}
+
+.mission-card{
+
+    border-top:6px solid var(--air-orange);
+
+}
+
+.vision-card:hover,
+.mission-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.card-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.vision-card h2,
+.mission-card h2{
+
+    color:var(--air-blue);
+
+    margin:15px 0;
+
+}
+
+.vision-card p,
+.mission-card p{
+
+    line-height:1.8;
+
+    color:#666;
+
+}
+/* ==========================================
+   OUR PURPOSE
+========================================== */
+
+.purpose-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-top:50px;
+
+}
+
+.purpose-card{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.purpose-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.purpose-icon{
+
+    font-size:2.8rem;
+
+    margin-bottom:20px;
+
+}
+
+.purpose-card h3{
+
+    color:var(--air-blue);
+
+    margin-bottom:15px;
+
+}
+
+.purpose-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+/* ==========================================
+   BUILDING AFRICA THROUGH COLLABORATION
+========================================== */
+
+.collaboration-section{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.collaboration-image{
+
+    text-align:center;
+
+}
+
+.collaboration-image img{
+
+    width:100%;
+
+    max-width:600px;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.4s;
+
+}
+
+.collaboration-image img:hover{
+
+    transform:scale(1.02);
+
+}
+
+.collaboration-content h2{
+
+    color:var(--air-blue);
+
+    font-size:2.6rem;
+
+    margin:20px 0;
+
+}
+
+.collaboration-content p{
+
+    color:#666;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+}
+/* ==========================================
+   OUR PARTNERS
+========================================== */
+
+.partner-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+
+}
+
+.partner-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    font-size:1.05rem;
+
+}
+
+.partner-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.partner-card h3{
+
+    color:var(--air-blue);
+
+    margin:20px 0 15px;
+
+}
+
+.partner-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+.partner-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+.partner-card .partner-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+/* ==========================================
+   EVERY PERSON HAS A PLACE IN AIR
+========================================== */
+
+.impact-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.impact-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.impact-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.impact-card img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+}
+
+.impact-content{
+
+    padding:30px;
+
+}
+
+.impact-content h3{
+
+    color:var(--air-blue);
+
+    margin-bottom:18px;
+
+    font-size:1.5rem;
+
+}
+
+.impact-content p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+/* ==========================================
+   OUR COMMITMENT
+========================================== */
+
+.commitment-section{
+
+    background:#f8fbfd;
+
+}
+
+.commitment-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-top:50px;
+
+}
+
+.commitment-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.commitment-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.commitment-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+.commitment-card h3{
+
+    color:var(--air-blue);
+
+    margin-bottom:15px;
+
+}
+
+.commitment-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+/* ==========================================
+   FINAL CTA
+========================================== */
+
+.final-cta{
+
+    background:linear-gradient(
+        135deg,
+        var(--air-blue),
+        #163c6b
+    );
+
+    color:white;
+
+    text-align:center;
+
+}
+
+.final-cta .section-tag{
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+}
+
+.final-cta h2{
+
+    font-size:3rem;
+
+    margin:20px 0;
+
+}
+
+.final-cta p{
+
+    max-width:850px;
+
+    margin:0 auto 40px;
+
+    line-height:2;
+
+    opacity:.95;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.primary-btn,
+.secondary-btn,
+.outline-btn{
+
+    padding:16px 36px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.primary-btn{
+
+    background:var(--air-green);
+
+    color:white;
+
+}
+
+.primary-btn:hover{
+
+    background:var(--air-orange);
+
+}
+
+.secondary-btn{
+
+    background:white;
+
+    color:var(--air-blue);
+
+}
+
+.secondary-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.outline-btn{
+
+    border:2px solid white;
+
+    color:white;
+
+}
+
+.outline-btn:hover{
+
+    background:white;
+
+    color:var(--air-blue);
+
+}
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+.about-page section{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Nice headings */
+
+h2{
+
+    font-weight:700;
+
+}
+
+p{
+
+    font-weight:400;
+
+}
+
+/* Smooth scrolling */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+/* ==========================================
+   YOUR IDEAS MATTER
+========================================== */
+
+.ideas-section{
+
+    background:#f8fbfd;
+
+}
+
+.ideas-content{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.ideas-content h2{
+
+    color:var(--air-blue);
+
+    font-size:2.8rem;
+
+    margin:20px 0;
+
+}
+
+.ideas-content p{
+
+    color:#666;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+}
+
+.ideas-box{
+
+    background:#fff;
+
+    margin-top:40px;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    border-left:6px solid var(--air-green);
+
+}
+
+.ideas-box h3{
+
+    color:var(--air-blue);
+
+    margin-bottom:20px;
+
+}
+
+.ideas-box p{
+
+    margin-bottom:30px;
+
+}
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media screen and (max-width:768px){
+
+.about-page{
+
+    overflow-x:hidden;
+
+}
+
+.about-page section{
+
+    padding:60px 20px;
+
+}
+
+/* HERO */
+
+.hero-grid{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.hero-image{
+
+    order:-1;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    max-width:350px;
+
+    margin:auto;
+
+}
+
+.hero-text{
+
+    text-align:center;
+
+}
+
+.hero-text h1{
+
+    font-size:2.5rem;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+/* WHO WE ARE */
+
+.about-story{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.story-image img{
+
+    width:100%;
+
+    max-width:350px;
+
+}
+
+.story-content{
+
+    text-align:center;
+
+}
+
+/* VISION */
+
+.vision-mission{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.vision-card,
+.mission-card{
+
+    width:100%;
+
+}
+
+/* PURPOSE */
+
+.purpose-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+}
+
+.purpose-card{
+
+    width:100%;
+
+}
+
+/* PARTNERS */
+
+.partner-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+}
+
+/* IMPACT */
+
+.impact-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+}
+
+.impact-card img{
+
+    width:100%;
+
+}
+
+/* COMMITMENT */
+
+.commitment-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+}
+
+/* CTA */
+
+.cta-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.primary-btn,
+.secondary-btn,
+.outline-btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+/* Collaboration */
+
+.collaboration-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.collaboration-image img{
+
+    max-width:380px;
+
+}
+
+/* Partners */
+
+.partner-grid{
+
+    grid-template-columns:1fr;
+
+}
+/* Impact */
+
+.impact-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+/* Commitment */
+
+.commitment-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+/* CTA */
+
+.final-cta h2{
+
+    font-size:2.2rem;
+
+}
+
+.cta-buttons{
+
+    flex-direction:column;
+
+}
+
+.primary-btn,
+.secondary-btn,
+.outline-btn{
+
+    width:100%;
+
+}
+.ideas-box{
+
+    padding:25px;
+
+}
+}

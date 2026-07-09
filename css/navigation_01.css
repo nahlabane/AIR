@@ -31,9 +31,7 @@
     list-style:none;
     display:flex;
     align-items:center;
-    justify-content:center;
-    flex:1;
-    gap:22px;
+    gap:18px;
     margin:0;
     padding:0;
 }
@@ -51,10 +49,7 @@
     transition:.3s;
 }
 
-.top-nav a:hover,
-.top-nav > .nav-container > ul > li:hover > a{
-    color:#F7941D;
-}
+.top-nav a:hover{color:#00AEEF;}
 
 .dropdown-menu{
     display:none;
@@ -190,168 +185,5 @@
 .air-header *{
 
     pointer-events:auto;
-
-}
-/*=========================================
-        AIR FOOTER
-=========================================*/
-
-.air-footer{
-
-    background:#081B29;
-
-    padding:30px 20px 20px;
-
-    text-align:center;
-
-}
-
-.contact-air-bar{
-
-    max-width:900px;
-
-    margin:0 auto;
-
-}
-
-.contact-air-bar a{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:15px;
-
-    width:100%;
-
-    text-decoration:none;
-
-    background:#10293d;
-
-    border:2px solid #0E6B38;
-
-    border-radius:50px;
-
-    padding:14px 28px;
-
-    transition:.35s;
-
-    color:#fff;
-
-}
-
-.contact-air-bar a:hover{
-
-    background:#0E6B38;
-
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-
-}
-
-.contact-icon{
-
-    font-size:24px;
-
-}
-
-.contact-text{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    gap:8px;
-
-    font-size:18px;
-
-    letter-spacing:.3px;
-
-}
-
-.contact-text strong{
-
-    color:#F7941D;
-
-}
-
-.divider{
-
-    color:#fff;
-
-}
-
-.contact-arrow{
-
-    font-size:24px;
-
-    color:#F7941D;
-
-    transition:.35s;
-
-}
-
-.contact-air-bar a:hover .contact-arrow{
-
-    transform:translateX(8px);
-
-}
-
-.copyright{
-
-    margin-top:20px;
-
-    color:#b8c7d1;
-
-    font-size:14px;
-
-}
-
-/*==========================
-      Mobile Footer
-==========================*/
-
-@media(max-width:768px){
-
-.contact-air-bar a{
-
-    padding:12px 18px;
-
-}
-
-.contact-text{
-
-    flex-direction:column;
-
-    gap:2px;
-
-    font-size:15px;
-
-}
-
-.divider{
-
-    display:none;
-
-}
-
-.contact-icon{
-
-    font-size:22px;
-
-}
-
-.contact-arrow{
-
-    font-size:22px;
-
-}
 
 }

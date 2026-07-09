@@ -103,7 +103,7 @@ mapObject.addEventListener("load", () => {
                 "<p>Loading AIR Footprint...</p>";
 
             // Google Apps Script
-            fetch(`https://script.google.com/macros/s/AKfycbwmOJSFEK1azUVrl3vQcOI4ADGFoZ5FAccOoUNM0F0EtWSVsMaPTElKvG_X0690HSTO/exec?country=${country.id}&t=${Date.now()}`)
+            fetch(`https://script.google.com/macros/s/AKfycbwmOJSFEK1azUVrl3vQcOI4ADGFoZ5FAccOoUNM0F0EtWSVsMaPTElKvG_X0690HSTO/exec?country=${country.id}`)
 
                 .then(response => response.json())
 
@@ -192,39 +192,17 @@ mapObject.addEventListener("load", () => {
 
                     } else {
 
-                        if (stats.error === "Country not active") {
-
-                            useFallback(info);
-
-                        } else {
-
-                            console.error("Apps Script Error:", stats);
-
-                            document.getElementById("regionsContainer").innerHTML =
-                                "<p>Unable to load AIR statistics. Please try again.</p>";
-
-                        }
+                        useFallback(info);
 
                     }
 
                 })
 
-                                .catch(error => {
+                .catch(error => {
 
                     console.error(error);
 
-                    document.getElementById("mentors").textContent = "--";
-                    document.getElementById("learners").textContent = "--";
-                    document.getElementById("volunteers").textContent = "--";
-                    document.getElementById("schools").textContent = "--";
-                    document.getElementById("subjects").textContent = "--";
-                    document.getElementById("projects").textContent = "--";
-
-                    const s = document.getElementById("status");
-                    if (s) s.textContent = "⚠️ Connection Error";
-
-                    document.getElementById("regionsContainer").innerHTML =
-                        "<p>Unable to connect to the AIR database. Please try again.</p>";
+                    useFallback(info);
 
                 });
 
