@@ -46,6 +46,10 @@
 </p>
 
 <form id="mentorForm">
+     <input
+        type="hidden"
+        name="formType"
+        value="Mentor">
 
 <!-- ========================================= -->
 <!-- COUNTRY -->
@@ -182,7 +186,7 @@
 <!-- SUBJECTS -->
 <!-- ========================================= -->
 
-<section id="mentorSubjects">
+<section id="mentorSubjects" style="display:none;">
 
     <h2>
 
@@ -218,10 +222,13 @@
 
     <p>
 
-        Choose the subjects you are willing to mentor.
+    Choose the subjects you are willing to mentor.
 
-    </p>
+    <br><br>
 
+    <strong>Important:</strong> AIR welcomes volunteer mentor registrations for <strong>all subjects</strong>. Subjects marked <span class="active-badge">🟢 Active</span> are currently receiving learner support, but AIR continues to recruit additional volunteer mentors to expand capacity and reach more learners. Subjects marked <span class="coming-badge">🟡 Recruiting Mentors</span> are areas where additional volunteer mentors are urgently needed before learner support can begin or be expanded.
+
+</p>
     <div id="mentorSubjectCheckboxes">
 
     </div>
@@ -266,17 +273,72 @@
 
         <div class="form-group">
 
-            <label>
+          <label>
+    Google (Gmail) Account <span>*</span>
+</label>
 
-                Email Address <span>*</span>
+<input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="yourname@gmail.com"
+    required>
 
-            </label>
+<small id="emailHelp">
+Please use the Gmail account you will use to access the AIR Portal after your application has been approved.
+</small>
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Enter your email address"
-                required>
+<br><br>
+
+<button
+    type="button"
+    id="sendOTPButton"
+    class="btn-secondary">
+
+Send Verification Code
+
+</button>
+
+<br><br>
+
+<div id="otpSection" style="display:none;">
+
+<label>
+
+Verification Code
+
+</label>
+
+<input
+    type="text"
+    id="otp"
+    maxlength="6"
+    placeholder="Enter the 6-digit code">
+
+<br><br>
+
+<button
+    type="button"
+    id="verifyOTPButton"
+    class="btn-secondary">
+
+Verify Code
+
+</button>
+
+<p
+    id="verificationMessage"
+    style="font-weight:bold;margin-top:15px;">
+
+</p>
+
+</div>
+
+<input
+    type="hidden"
+    id="emailVerified"
+    name="emailVerified"
+    value="false">
 
         </div>
 
@@ -902,10 +964,13 @@
 
 <div id="footer"></div>
 
+<script src="js/gmail-verification.js"></script>
+
+<script src="js/AIR_Education_Database.js"></script>
+
 <script src="js/mentor-registration.js"></script>
 
 <script src="js/includes.js"></script>
 
 </body>
-
 </html>

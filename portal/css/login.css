@@ -1,0 +1,141 @@
+/* ===========================================
+   RESET
+=========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================================
+   BODY
+=========================================== */
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f4f7fb;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+}
+
+/* ===========================================
+   LOGIN CARD
+=========================================== */
+
+.login-container{
+
+    width:420px;
+
+    background:#ffffff;
+
+    border-radius:12px;
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+
+}
+
+/* ===========================================
+   LOGO
+=========================================== */
+
+.logo{
+
+    width:100px;
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================================
+   HEADINGS
+=========================================== */
+
+h1{
+
+    color:#004080;
+
+    margin-bottom:10px;
+
+    font-size:32px;
+
+}
+
+p{
+
+    color:#555;
+
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    color:#888;
+
+    margin-bottom:35px;
+
+}
+
+/* ===========================================
+   GOOGLE BUTTON
+=========================================== */
+
+.g_id_signin{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:25px;
+
+}
+
+/* ===========================================
+   STATUS MESSAGE
+=========================================== */
+
+#loginStatus{
+
+    margin-top:20px;
+
+    color:#cc0000;
+
+    font-weight:bold;
+
+}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media(max-width:480px){
+
+    .login-container{
+
+        width:95%;
+
+        padding:30px 20px;
+
+    }
+
+    h1{
+
+        font-size:28px;
+
+    }
+
+}

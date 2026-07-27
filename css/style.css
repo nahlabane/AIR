@@ -265,3 +265,45 @@ footer{
 .header-logo{
     margin-bottom:15px;
 }
+/* ==========================================
+   OVERRIDE WEBSITE SECTION SPACING
+========================================== */
+
+form section{
+
+    padding:20px 0 !important;
+
+}
+
+form section:first-child{
+
+    padding-top:0 !important;
+
+}
+
+form section:last-child{
+
+    padding-bottom:0 !important;
+
+}
+/* ==========================================
+   MENTOR REGISTRATION SECTIONS
+========================================== */
+
+#registrationContent section{
+
+    padding:20px 0 !important;
+
+}
+
+#registrationContent h2{
+
+    margin-bottom:12px;
+
+}
+
+#registrationContent p{
+
+    margin-bottom:15px;
+
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AIR Portal Login</title>
+
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Google Identity Services -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <img src="../images/air-logo.png"
+             alt="AIR Logo"
+             class="logo">
+
+        <h1>
+
+            AIR Portal
+
+        </h1>
+
+        <p>
+
+            African Industrial Revolution
+
+        </p>
+
+        <p class="subtitle">
+
+            Learning Management System
+
+        </p>
+
+        <!-- Google Login Button -->
+
+        <div id="g_id_onload"
+
+            data-client_id="624176789588-3oq4ravgcdae4lks8lt8t26c4fg7l1hu.apps.googleusercontent.com"
+
+            data-callback="handleCredentialResponse"
+
+            data-auto_prompt="false">
+
+        </div>
+
+        <div class="g_id_signin"
+
+            data-type="standard"
+
+            data-size="large"
+
+            data-theme="filled_blue"
+
+            data-text="signin_with"
+
+            data-shape="pill"
+
+            data-logo_alignment="left">
+
+        </div>
+
+        <div id="loginStatus"></div>
+
+    </div>
+
+    <script src="js/login.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

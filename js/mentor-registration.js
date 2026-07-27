@@ -2,7 +2,15 @@
    AIR MENTOR REGISTRATION
 ========================================== */
 
-const country = document.getElementById("country");
+/* ==========================================
+   FORM ELEMENTS
+========================================== */
+
+const mentorForm =
+document.getElementById("mentorForm");
+
+const country =
+document.getElementById("country");
 
 const registrationContent =
 document.getElementById("registrationContent");
@@ -27,60 +35,58 @@ document.getElementById("videoSupport");
 
 const videoOptions =
 document.getElementById("videoOptions");
-const DEFAULT_PROGRAMME = {
 
-    level:"Senior Secondary Education",
 
-    status:"recruiting",
+/* ==========================================
+   INITIAL STATE
+========================================== */
 
-    description:
-    "AIR is currently recruiting volunteer mentors. The mentorship programme will become active once enough volunteer mentors have joined in your country.",
+registrationContent.style.display = "none";
 
-    subjects:[
+videoOptions.style.display = "none";
 
-        {name:"Mathematics",status:"recruiting"},
-        {name:"Physics",status:"recruiting"},
-        {name:"Accounting",status:"recruiting"},
-        {name:"English",status:"recruiting"},
-        {name:"Kiswahili",status:"recruiting"}
 
-    ]
+/* ==========================================
+   FIND COUNTRY FROM DATABASE
+========================================== */
 
-};
+function getCountryData(countryName){
 
-const ACTIVE_PROGRAMMES = {
+    return Object.values(
 
-    "South Africa":{
+        AIR_EDUCATION_DATABASE
 
-        level:"Grade 12",
+    ).find(
 
-        status:"active",
+        country => country.name === countryName
 
-        description:
-        "AIR currently provides academic mentorship for Grade 12 learners in South Africa. Additional subjects will be activated as more volunteer mentors join the network.",
+    );
 
-        subjects:[
-
-            {name:"Mathematics",status:"active"},
-            {name:"Physics",status:"active"},
-            {name:"Accounting",status:"recruiting"},
-            {name:"English",status:"recruiting"},
-            {name:"Kiswahili",status:"recruiting"}
-
-        ]
-
-    }
-
-};
-
-registrationContent.style.display="none";
-videoOptions.style.display="none";
+}
+/* ==========================================
+   COUNTRY SELECTION
+========================================== */
 
 country.addEventListener("change",()=>{
 
-    if(country.value===""){
+    const selectedCountry =
+
+    country.value;
+
+    if(selectedCountry===""){
 
         registrationContent.style.display="none";
+
+        programmeCountry.innerHTML=
+        "AIR Programme";
+
+        programmeStatus.innerHTML="";
+
+        programmeDescription.innerHTML="";
+
+        programmeSubjects.innerHTML="";
+
+        mentorSubjectCheckboxes.innerHTML="";
 
         return;
 
@@ -88,7 +94,7 @@ country.addEventListener("change",()=>{
 
     registrationContent.style.display="block";
 
-    loadProgramme(country.value);
+    loadProgramme(selectedCountry);
 
 });
 /* ==========================================
@@ -97,27 +103,87 @@ country.addEventListener("change",()=>{
 
 function loadProgramme(selectedCountry){
 
-    const programme = ACTIVE_PROGRAMMES[selectedCountry] || DEFAULT_PROGRAMME;
+    const programme =
+
+    getCountryData(selectedCountry);
+
+    if(!programme){
+
+        programmeCountry.innerHTML=
+
+        "AIR Programme";
+
+        programmeStatus.innerHTML="";
+
+        programmeDescription.innerHTML="";
+
+        programmeSubjects.innerHTML="";
+
+        mentorSubjectCheckboxes.innerHTML="";
+
+        return;
+
+    }
 
     programmeCountry.innerHTML =
-    "🌍 AIR " + selectedCountry + " Programme";
 
-    if(programme.status==="active"){
+    "🌍 AIR " +
+
+    programme.name +
+
+    " Programme";
+
+
+
+    const activeSubjects =
+
+    programme.subjects.filter(
+
+        subject =>
+
+        subject.status ===
+
+        SUBJECT_STATUS.ACTIVE
+
+    ).length;
+
+
+
+    if(activeSubjects > 0){
 
         programmeStatus.innerHTML =
+
         '<span class="active-badge">🟢 Programme Active</span>';
 
-    }else{
+    }
+
+    else{
 
         programmeStatus.innerHTML =
+
         '<span class="coming-badge">🟡 Recruiting Volunteer Mentors</span>';
 
     }
 
-    programmeDescription.innerHTML =
-    programme.description;
 
-    buildSubjects(programme.subjects);
+
+    programmeDescription.innerHTML =
+
+    "<strong>Curriculum:</strong> "
+
+    + programme.curriculum +
+
+    "<br><strong>School Level:</strong> "
+
+    + programme.finalLevel.name;
+
+
+
+    buildSubjects(
+
+        programme.subjects
+
+    );
 
 }
 /* ==========================================
@@ -126,68 +192,111 @@ function loadProgramme(selectedCountry){
 
 function buildSubjects(subjects){
 
-    programmeSubjects.innerHTML="";
+    programmeSubjects.innerHTML = "";
 
-    mentorSubjectCheckboxes.innerHTML="";
+    mentorSubjectCheckboxes.innerHTML = "";
 
     subjects.forEach(subject=>{
 
-        /* ----------------------------
-           Programme Card
-        ----------------------------- */
+        const isActive =
 
-        const card=document.createElement("div");
+        subject.status ===
 
-        card.className="subject-card";
+        SUBJECT_STATUS.ACTIVE;
 
-        card.innerHTML=`
 
-            <strong>${subject.name}</strong>
 
-            <br><br>
+        const badge =
 
-            ${
-                subject.status==="active"
+        isActive
 
-                ?'<span class="active-badge">🟢 Active</span>'
+        ? '<span class="active-badge">🟢 Active</span>'
 
-                :'<span class="coming-badge">🟡 Recruiting Mentors</span>'
-            }
+        : '<span class="coming-badge">🟡 Recruiting Mentors</span>';
+
+
+
+        /* =====================================
+           SUBJECT CARD
+        ===================================== */
+
+        const card =
+
+        document.createElement("div");
+
+        card.className =
+
+        "subject-card";
+
+        card.innerHTML =
+
+        `
+
+        <strong>
+
+            ${subject.name}
+
+        </strong>
+
+        <br>
+
+        <small>
+
+            ${subject.code}
+
+        </small>
+
+        <br><br>
+
+        ${badge}
 
         `;
 
         programmeSubjects.appendChild(card);
 
-        /* ----------------------------
-           Mentor Selection
-        ----------------------------- */
 
-        const label=document.createElement("label");
 
-        label.className="subject-card";
+        /* =====================================
+           CHECKBOX
+        ===================================== */
 
-        label.innerHTML=`
+        const label =
 
-            <input
-                type="checkbox"
-                name="subjects"
-                value="${subject.name}">
+        document.createElement("label");
 
-            <strong>
+        label.className =
 
-                ${subject.name}
+        "subject-card";
 
-            </strong>
+        label.innerHTML =
 
-            <br><br>
+        `
 
-            ${
-                subject.status==="active"
+        <input
 
-                ?'<span class="active-badge">🟢 Active</span>'
+            type="checkbox"
 
-                :'<span class="coming-badge">🟡 Recruiting Mentors</span>'
-            }
+            name="subjects"
+
+            value="${subject.code}">
+
+        <strong>
+
+            ${subject.name}
+
+        </strong>
+
+        <br>
+
+        <small>
+
+            ${subject.code}
+
+        </small>
+
+        <br><br>
+
+        ${badge}
 
         `;
 
@@ -196,67 +305,116 @@ function buildSubjects(subjects){
     });
 
 }
-
-
 /* ==========================================
-   EDUCATIONAL CONTENT
+   GOOGLE SHEETS SUBMISSION
 ========================================== */
 
-videoSupport.addEventListener("change",()=>{
+const scriptURL =
+"https://script.google.com/macros/s/AKfycbybRGbtorNJ0rvmRfkAvcfuCRM253g5DnxEN92C0EptPTfW48HzgipluUd5xpqmUXyH/exec";
 
-    videoOptions.style.display =
-    videoSupport.value==="Yes" ? "block" : "none";
 
-});
-
-/* ==========================================
-   FORM SUBMISSION
-========================================== */
-
-const mentorForm=document.getElementById("mentorForm");
-const scriptURL="";
-
-mentorForm.addEventListener("submit",async(e)=>{
+mentorForm.addEventListener("submit", async (e)=>{
 
     e.preventDefault();
 
-    if(scriptURL===""){
-        alert("Google Apps Script URL has not been configured.");
-        return;
-    }
+    const button =
 
-    const button=mentorForm.querySelector("button");
+    mentorForm.querySelector("button");
 
-    button.disabled=true;
-    button.textContent="Submitting...";
+    button.disabled = true;
+
+    button.textContent =
+
+    "Submitting...";
 
     try{
 
-        await fetch(scriptURL,{
-            method:"POST",
-            body:new FormData(mentorForm)
-        });
+        const formData =
 
-        alert("Volunteer mentor registration submitted successfully.");
+        new FormData(mentorForm);
+
+       const response = await fetch(
+
+    scriptURL,
+
+    {
+
+        method:"POST",
+
+        body:formData
+
+    }
+
+);
+
+if(!response.ok){
+
+    throw new Error(
+
+        "Server returned " +
+
+        response.status
+
+    );
+
+}
+
+const result = await response.json();
+
+if(!result.success){
+
+    alert(result.message);
+
+    button.disabled = false;
+
+    button.textContent =
+
+    "Join AIR as a Volunteer Mentor";
+
+    return;
+
+}
+
+alert(result.message);
 
         mentorForm.reset();
 
         registrationContent.style.display="none";
+
         programmeCountry.innerHTML="AIR Programme";
+
         programmeStatus.innerHTML="";
+
         programmeDescription.innerHTML="";
+
         programmeSubjects.innerHTML="";
+
         mentorSubjectCheckboxes.innerHTML="";
-        videoOptions.style.display="none";
 
-    }catch(error){
+        if(videoOptions){
 
-        console.error(error);
-        alert("Submission failed. Please try again.");
+            videoOptions.style.display="none";
+
+        }
 
     }
 
-    button.disabled=false;
-    button.textContent="Join AIR as a Volunteer Mentor";
+    catch(error){
+
+        console.error(error);
+
+        alert(
+
+            "Submission failed. Please try again."
+
+        );
+
+    }
+
+    button.disabled = false;
+
+    button.textContent =
+
+    "Join AIR as a Volunteer Mentor";
 
 });

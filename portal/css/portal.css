@@ -1,0 +1,677 @@
+/*==================================================
+                AIR PORTAL
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --primary:#0A3D7A;
+    --primary-dark:#062E5A;
+    --primary-light:#1E5AA8;
+
+    --background:#EEF2F7;
+    --surface:#FFFFFF;
+
+    --text:#1F2937;
+    --text-light:#6B7280;
+
+    --border:#D8DEE8;
+
+    --shadow:0 4px 15px rgba(0,0,0,.08);
+
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:var(--background);
+
+}
+
+/*==================================================
+                APP LAYOUT
+==================================================*/
+
+body{
+
+    display:flex;
+
+}
+
+/*==================================================
+                SIDEBAR
+==================================================*/
+
+.sidebar{
+
+    width:270px;
+
+    height:100vh;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex-shrink:0;
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+/*==================================================
+            SIDEBAR HEADER
+==================================================*/
+
+.sidebar-header{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 22px;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.sidebar-header h2{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+/*==================================================
+            CLOSE BUTTON
+==================================================*/
+
+#closeMenu{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+/*==================================================
+                MENU
+==================================================*/
+
+#menu{
+
+    flex:1;
+
+    list-style:none;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+}
+
+#menu li{
+
+    padding:18px 24px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.25s;
+
+}
+
+#menu li:hover{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+#menu li.active{
+
+    background:var(--primary-light);
+
+}
+
+#menu li:last-child{
+
+    margin-top:auto;
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+}
+
+/*==================================================
+            SIDEBAR SCROLLBAR
+==================================================*/
+
+#menu::-webkit-scrollbar{
+
+    width:6px;
+
+}
+
+#menu::-webkit-scrollbar-thumb{
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:30px;
+
+}
+
+#menu::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+/*==================================================
+                    MAIN
+==================================================*/
+
+.main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+/*==================================================
+                    HEADER
+==================================================*/
+
+header{
+
+    height:80px;
+
+    background:var(--surface);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 30px;
+
+    border-bottom:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    z-index:100;
+
+}
+
+/*==================================================
+                HAMBURGER
+==================================================*/
+
+#openMenu{
+
+    display:none;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.25s;
+
+}
+
+#openMenu:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/*==================================================
+                HEADER LEFT
+==================================================*/
+
+.header-left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    flex:1;
+
+    margin-left:20px;
+
+}
+
+.header-left h2{
+
+    color:var(--primary);
+
+    font-size:26px;
+
+    font-weight:700;
+
+    margin-bottom:4px;
+
+}
+
+.header-left p{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+/*==================================================
+                HEADER RIGHT
+==================================================*/
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    color:var(--primary);
+
+    font-size:16px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+/*==================================================
+                CONTENT
+==================================================*/
+
+#content{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    padding:30px;
+
+    background:var(--background);
+
+}
+
+/*==================================================
+                LOADING
+==================================================*/
+
+.loading{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100%;
+
+    color:var(--text-light);
+
+    font-size:18px;
+
+}
+
+/*==================================================
+                CONTENT SCROLLBAR
+==================================================*/
+
+#content::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+#content::-webkit-scrollbar-thumb{
+
+    background:#C5CEDA;
+
+    border-radius:20px;
+
+}
+
+#content::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+/*==================================================
+                MOBILE OVERLAY
+==================================================*/
+
+#overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:900;
+
+}
+
+#overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+/*==================================================
+                TABLET
+==================================================*/
+
+@media screen and (max-width:992px){
+
+    .sidebar{
+
+        width:250px;
+
+    }
+
+    header{
+
+        padding:0 24px;
+
+    }
+
+    .header-left h2{
+
+        font-size:22px;
+
+    }
+
+    #content{
+
+        padding:24px;
+
+    }
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media screen and (max-width:768px){
+
+    /* Sidebar */
+
+    .sidebar{
+
+        position:fixed;
+
+        top:0;
+
+        left:-270px;
+
+        width:270px;
+
+        height:100vh;
+
+        box-shadow:8px 0 25px rgba(0,0,0,.25);
+
+        transition:left .30s ease;
+
+    }
+
+    .sidebar.active{
+
+        left:0;
+
+    }
+
+    /* Sidebar Header */
+
+    .sidebar-header{
+
+        height:70px;
+
+        padding:0 18px;
+
+    }
+
+    .sidebar-header h2{
+
+        font-size:24px;
+
+    }
+
+    /* Close Button */
+
+    #closeMenu{
+
+        display:block;
+
+    }
+
+    /* Header */
+
+    header{
+
+        height:70px;
+
+        padding:0 18px;
+
+        gap:12px;
+
+    }
+
+    /* Hamburger */
+
+    #openMenu{
+
+        display:flex;
+
+        flex-shrink:0;
+
+    }
+
+    /* Greeting */
+
+    .header-left{
+
+        margin-left:0;
+
+        overflow:hidden;
+
+    }
+
+    .header-left h2{
+
+        font-size:18px;
+
+        white-space:nowrap;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+
+    }
+
+    .header-left p{
+
+        font-size:13px;
+
+    }
+
+    /* Country */
+
+    .header-right{
+
+        display:none;
+
+    }
+
+    /* Content */
+
+    #content{
+
+        padding:18px;
+
+    }
+
+}
+
+/*==================================================
+            SMALL PHONES
+==================================================*/
+
+@media screen and (max-width:480px){
+
+    .sidebar{
+
+        width:250px;
+
+        left:-250px;
+
+    }
+
+    .sidebar.active{
+
+        left:0;
+
+    }
+
+    .sidebar-header h2{
+
+        font-size:22px;
+
+    }
+
+    header{
+
+        height:65px;
+
+        padding:0 15px;
+
+    }
+
+    #openMenu{
+
+        width:42px;
+
+        height:42px;
+
+        font-size:24px;
+
+    }
+
+    .header-left h2{
+
+        font-size:17px;
+
+    }
+
+    .header-left p{
+
+        font-size:12px;
+
+    }
+
+    #content{
+
+        padding:15px;
+
+    }
+
+}
+
+/*==================================================
+            DESKTOP
+==================================================*/
+
+@media screen and (min-width:769px){
+
+    #overlay{
+
+        display:none;
+
+    }
+
+    #openMenu{
+
+        display:none !important;
+
+    }
+
+    #closeMenu{
+
+        display:none !important;
+
+    }
+
+}

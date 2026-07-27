@@ -12,17 +12,202 @@
 <section><div class="container">
 <h2>Learner Registration</h2>
 <p class="form-description">Register as a learner to join AIR programmes.</p>
-<form id="learnerForm">
 
-    <!-- ========================================= -->
-    <!-- PERSONAL INFORMATION -->
-    <!-- ========================================= -->
+<form id="learnerForm">
+<input
+        type="hidden"
+        name="formType"
+        value="Learner">
+<!-- ========================================= -->
+<!-- COUNTRY -->
+<!-- ========================================= -->
+
+<div class="form-group">
+
+    <label>
+
+        Country <span>*</span>
+
+    </label>
+
+    <select
+        id="country"
+        name="country"
+        required>
+
+        <option value="">
+
+            Select Country
+
+        </option>
+
+        <!-- Paste your 54 African countries here -->
+
+        <option>Algeria</option>
+        <option>Angola</option>
+        <option>Benin</option>
+        <option>Botswana</option>
+        <option>Burkina Faso</option>
+        <option>Burundi</option>
+        <option>Cabo Verde</option>
+        <option>Cameroon</option>
+        <option>Central African Republic</option>
+        <option>Chad</option>
+        <option>Comoros</option>
+        <option>Democratic Republic of the Congo</option>
+        <option>Republic of the Congo</option>
+        <option>Djibouti</option>
+        <option>Egypt</option>
+        <option>Equatorial Guinea</option>
+        <option>Eritrea</option>
+        <option>Eswatini</option>
+        <option>Ethiopia</option>
+        <option>Gabon</option>
+        <option>Gambia</option>
+        <option>Ghana</option>
+        <option>Guinea</option>
+        <option>Guinea-Bissau</option>
+        <option>Ivory Coast</option>
+        <option>Kenya</option>
+        <option>Lesotho</option>
+        <option>Liberia</option>
+        <option>Libya</option>
+        <option>Madagascar</option>
+        <option>Malawi</option>
+        <option>Mali</option>
+        <option>Mauritania</option>
+        <option>Mauritius</option>
+        <option>Morocco</option>
+        <option>Mozambique</option>
+        <option>Namibia</option>
+        <option>Niger</option>
+        <option>Nigeria</option>
+        <option>Rwanda</option>
+        <option>Sao Tome and Principe</option>
+        <option>Senegal</option>
+        <option>Seychelles</option>
+        <option>Sierra Leone</option>
+        <option>Somalia</option>
+        <option>South Africa</option>
+        <option>South Sudan</option>
+        <option>Sudan</option>
+        <option>Tanzania</option>
+        <option>Togo</option>
+        <option>Tunisia</option>
+        <option>Uganda</option>
+        <option>Zambia</option>
+        <option>Zimbabwe</option>
+
+    </select>
+
+
+
+</div>
+<!-- ========================================= -->
+<!-- EVERYTHING BELOW IS HIDDEN -->
+<!-- ========================================= -->
+
+<div id="registrationContent"
+     style="display:none;">
+     <!-- ========================================= -->
+<!-- AIR PROGRAMME -->
+<!-- ========================================= -->
+
+<section id="airProgramme">
+
+    <h2>
+
+        AIR Mentorship Programme
+
+    </h2>
+
+    <p>
+
+        The information below is based on the country you selected.
+        AIR programmes differ from one country to another depending on
+        the number of volunteer mentors currently available.
+
+    </p>
+
+    <div
+        id="programmeCard"
+        class="programme-notice">
+
+        <h3 id="programmeCountry">
+
+            AIR Programme
+
+        </h3>
+
+        <div id="programmeStatus">
+
+        </div>
+
+        <p id="programmeDescription">
+
+        </p>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- AVAILABLE SUBJECTS -->
+<!-- ========================================= -->
+
+<!-- ========================================= -->
+<!-- SUBJECTS REQUIRED -->
+<!-- ========================================= -->
+
+<section id="learnerSubjects">
+
+    <h2>
+
+        Subjects You Need Academic Support In
+
+    </h2>
+
+    <p>
+
+    Select every subject you would like AIR mentors to help you with.
+
+    <br><br>
+
+    <strong>Important:</strong> Subjects labelled <span class="coming-badge">🟡 Recruiting Mentors</span> are still open for learner registration even though sufficient volunteer mentors are not yet available. By registering for these subjects, you help AIR understand the demand for academic support and guide the recruitment of additional volunteer mentors. Once enough mentors have joined, learners registered for these subjects will be prioritised for support.
+
+    </p>
+
+    <div id="learnerSubjectCheckboxes">
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- PERSONAL INFORMATION -->
+<!-- ========================================= -->
+
+<section id="personalInformation">
+
+    <h2>
+
+        Personal Information
+
+    </h2>
+
+    <p>
+
+        Please provide your personal information so AIR can contact you regarding your learner registration.
+
+    </p>
 
     <div class="form-row">
 
         <div class="form-group">
 
-            <label>Full Name <span>*</span></label>
+            <label>
+
+                Full Name <span>*</span>
+
+            </label>
 
             <input
                 type="text"
@@ -34,13 +219,76 @@
 
         <div class="form-group">
 
-            <label>Email Address <span>*</span></label>
+            <label>
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Enter your email address"
-                required>
+    Google (Gmail) Account <span>*</span>
+
+</label>
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="yourname@gmail.com"
+    required>
+
+<small id="emailHelp">
+
+Please use the Gmail account you will use to access the AIR Portal after your application has been approved.
+
+</small>
+
+<br><br>
+
+<button
+    type="button"
+    id="sendOTPButton"
+    class="btn-secondary">
+
+Send Verification Code
+
+</button>
+
+<br><br>
+
+<div id="otpSection" style="display:none;">
+
+<label>
+
+Verification Code
+
+</label>
+
+<input
+    type="text"
+    id="otp"
+    maxlength="6"
+    placeholder="Enter the 6-digit code">
+
+<br><br>
+
+<button
+    type="button"
+    id="verifyOTPButton"
+    class="btn-secondary">
+
+Verify Code
+
+</button>
+
+<p
+    id="verificationMessage"
+    style="font-weight:bold;margin-top:15px;">
+
+</p>
+
+</div>
+
+<input
+    type="hidden"
+    id="emailVerified"
+    name="emailVerified"
+    value="false">
 
         </div>
 
@@ -50,219 +298,17 @@
 
         <div class="form-group">
 
-            <label>Country <span>*</span></label>
-
-            <select
-                id="country"
-                name="country"
-                required>
-
-                <option value="">Select Country</option>
-
-<option value="Algeria">Algeria</option>
-<option value="Angola">Angola</option>
-<option value="Benin">Benin</option>
-<option value="Botswana">Botswana</option>
-<option value="Burkina Faso">Burkina Faso</option>
-<option value="Burundi">Burundi</option>
-<option value="Cabo Verde">Cabo Verde</option>
-<option value="Cameroon">Cameroon</option>
-<option value="Central African Republic">Central African Republic</option>
-<option value="Chad">Chad</option>
-<option value="Comoros">Comoros</option>
-<option value="Democratic Republic of the Congo">Democratic Republic of the Congo</option>
-<option value="Republic of the Congo">Republic of the Congo</option>
-<option value="Djibouti">Djibouti</option>
-<option value="Egypt">Egypt</option>
-<option value="Equatorial Guinea">Equatorial Guinea</option>
-<option value="Eritrea">Eritrea</option>
-<option value="Eswatini">Eswatini</option>
-<option value="Ethiopia">Ethiopia</option>
-<option value="Gabon">Gabon</option>
-<option value="Gambia">Gambia</option>
-<option value="Ghana">Ghana</option>
-<option value="Guinea">Guinea</option>
-<option value="Guinea-Bissau">Guinea-Bissau</option>
-<option value="Ivory Coast">Ivory Coast</option>
-<option value="Kenya">Kenya</option>
-<option value="Lesotho">Lesotho</option>
-<option value="Liberia">Liberia</option>
-<option value="Libya">Libya</option>
-<option value="Madagascar">Madagascar</option>
-<option value="Malawi">Malawi</option>
-<option value="Mali">Mali</option>
-<option value="Mauritania">Mauritania</option>
-<option value="Mauritius">Mauritius</option>
-<option value="Morocco">Morocco</option>
-<option value="Mozambique">Mozambique</option>
-<option value="Namibia">Namibia</option>
-<option value="Niger">Niger</option>
-<option value="Nigeria">Nigeria</option>
-<option value="Rwanda">Rwanda</option>
-<option value="Sao Tome and Principe">Sao Tome and Principe</option>
-<option value="Senegal">Senegal</option>
-<option value="Seychelles">Seychelles</option>
-<option value="Sierra Leone">Sierra Leone</option>
-<option value="Somalia">Somalia</option>
-<option value="South Africa">South Africa</option>
-<option value="South Sudan">South Sudan</option>
-<option value="Sudan">Sudan</option>
-<option value="Tanzania">Tanzania</option>
-<option value="Togo">Togo</option>
-<option value="Tunisia">Tunisia</option>
-<option value="Uganda">Uganda</option>
-<option value="Zambia">Zambia</option>
-<option value="Zimbabwe">Zimbabwe</option>
-            </select>
-
-        </div>
-
-    </div>
-
-    <!-- ========================================= -->
-    <!-- PROGRAMME STATUS -->
-    <!-- ========================================= -->
-
-    <div class="programme-notice">
-
-        <h3>
-
-            AIR Mentorship & Academic Support Network
-
-        </h3>
-
-        <p>
-
-            You are registering for the AIR Mentorship & Academic
-            Support Network, which is currently the only active learner
-            programme under the African Industrial Revolution (AIR).
-
-        </p>
-
-        <p>
-
-            AIR Tech Academy is currently under development and learner
-            registration for that programme will open in the future.
-
-        </p>
-
-    </div>
-
-    <!-- ========================================= -->
-    <!-- SOUTH AFRICA NOTICE -->
-    <!-- ========================================= -->
-
-    <div id="southAfricaNotice"
-         class="programme-notice"
-         style="display:none;">
-
-        <h3>
-
-            🇿🇦 South Africa Programme
-
-        </h3>
-
-        <p>
-
-            AIR currently provides active academic support for
-            <strong>Grade 12 Mathematics and Physical Sciences</strong>
-            learners.
-
-        </p>
-
-        <p>
-
-            Learners from Grade 8–11 are encouraged to register.
-            Registration helps AIR understand demand while we recruit
-            more volunteer mentors.
-
-        </p>
-
-        <p>
-
-            If your subject is not listed, you can enter it manually.
-
-        </p>
-
-    </div>
-
-    <!-- ========================================= -->
-    <!-- INTERNATIONAL NOTICE -->
-    <!-- ========================================= -->
-
-    <div id="internationalNotice"
-     class="programme-notice"
-     style="display:none;">
-
-    <h3 id="countryProgrammeTitle">
-        🌍 African Mentorship Programme
-    </h3>
-
-    <p id="countryProgrammeMessage"></p>
-
-</div>
-
-    <!-- ========================================= -->
-    <!-- SOUTH AFRICA FIELDS -->
-    <!-- ========================================= -->
-
-    <div id="southAfricaFields"
-         style="display:none;">
-
-        <div class="form-row">
-
-            <div class="form-group">
-
-                <label>
-
-                    School Name
-
-                </label>
-
-                <input
-                    type="text"
-                    name="school">
-
-            </div>
-            
-
-            <div class="form-group">
-
-                <label>
-
-                    Current Grade
-
-                </label>
-
-                <select
-                    id="grade"
-                    name="grade">
-
-                    <option value="">Select Grade</option>
-
-                    <option>Grade 8</option>
-                    <option>Grade 9</option>
-                    <option>Grade 10</option>
-                    <option>Grade 11</option>
-                    <option>Grade 12</option>
-
-                </select>
-
-            </div>
-
-        </div>
-
-        <div class="form-group">
-
             <label>
 
-                Select Subject(s)
+                Phone / WhatsApp Number <span>*</span>
 
             </label>
 
-            <div id="subjectsContainer">
-
-            </div>
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone or WhatsApp number"
+                required>
 
         </div>
 
@@ -270,215 +316,170 @@
 
             <label>
 
-                Other Subject(s)
+                Province / State / Region
 
             </label>
 
             <input
                 type="text"
-                name="otherSubjects"
-                placeholder="Example: Geography, CAT, Tourism">
+                name="region"
+                placeholder="Province, State or Region">
 
         </div>
 
     </div>
 
-    <!-- ========================================= -->
-    <!-- OTHER AFRICAN COUNTRIES -->
-    <!-- ========================================= -->
+</section>
+<!-- ========================================= -->
+<!-- LANGUAGES -->
+<!-- ========================================= -->
 
-    <div id="internationalFields"
-         style="display:none;">
+<section id="languages">
 
-        <div class="form-row">
+    <h2>
 
-            <div class="form-group">
+        Languages
 
-                <label>
+    </h2>
 
-                    School / Institution Name
+    <p>
 
-                </label>
+        Which languages are you comfortable learning in?
 
-                <input
-                    type="text"
-                    name="internationalSchool">
-
-            </div>
-
-            <div class="form-group">
-
-                <label>
-
-                    Current Class / Grade
-
-                </label>
-
-                <input
-                    type="text"
-                    name="internationalGrade"
-                    placeholder="Example: Form 3, Year 10, Senior 2">
-
-            </div>
-
-        </div>
-
-        <div class="form-group">
-
-            <label>
-
-                Subjects You Need Help With
-
-            </label>
-
-            <textarea
-                rows="4"
-                name="internationalSubjects"
-                placeholder="Example: Mathematics, Physics, Chemistry"></textarea>
-
-        </div>
-
-    </div>
-        <!-- ========================================= -->
-    <!-- LANGUAGES -->
-    <!-- ========================================= -->
+    </p>
 
     <div class="form-group">
 
         <label>
 
-            Languages You Speak <span>*</span>
+            Languages <span>*</span>
 
         </label>
 
         <input
             type="text"
             name="languages"
-            placeholder="Example: English, isiZulu, Swahili"
+            placeholder="Example: English, Kiswahili, isiZulu"
             required>
-
-        <small>
-
-            Separate multiple languages using commas.
-
-        </small>
 
     </div>
 
-    <!-- ========================================= -->
-    <!-- AVAILABILITY -->
-    <!-- ========================================= -->
+</section>
+<!-- ========================================= -->
+<!-- AVAILABILITY -->
+<!-- ========================================= -->
+
+<section id="availability">
+
+    <h2>
+
+        Availability
+
+    </h2>
+
+    <p>
+
+        Tell us when you are normally available for mentoring sessions.
+
+    </p>
 
     <div class="form-group">
 
         <label>
 
-            When are you available for mentoring sessions? <span>*</span>
+            Preferred Time
 
         </label>
 
         <select
-            name="availability"
-            required>
+            name="availability">
 
-            <option value="">Select Availability</option>
+            <option value="">
 
-            <option>Weekdays</option>
+                Select
 
-            <option>Weekends</option>
+            </option>
 
-            <option>Evenings</option>
+            <option>
 
-            <option>Flexible</option>
+                Weekdays
+
+            </option>
+
+            <option>
+
+                Weekends
+
+            </option>
+
+            <option>
+
+                Evenings
+
+            </option>
+
+            <option>
+
+                Flexible
+
+            </option>
 
         </select>
 
     </div>
 
-    <!-- ========================================= -->
-    <!-- INTERNET ACCESS -->
-    <!-- ========================================= -->
+</section>
+<!-- ========================================= -->
+<!-- ADDITIONAL INFORMATION -->
+<!-- ========================================= -->
+
+<section id="additionalInformation">
+
+    <h2>
+
+        Additional Information
+
+    </h2>
+
+    <p>
+
+        Tell AIR anything else that may help us support your learning journey.
+
+    </p>
 
     <div class="form-group">
 
         <label>
 
-            Do you have regular access to the internet? <span>*</span>
-
-        </label>
-
-        <select
-            name="internet"
-            required>
-
-            <option value="">Select</option>
-
-            <option>Yes</option>
-
-            <option>No</option>
-
-            <option>Sometimes</option>
-
-        </select>
-
-    </div>
-
-    <!-- ========================================= -->
-    <!-- DEVICE -->
-    <!-- ========================================= -->
-
-    <div class="form-group">
-
-        <label>
-
-            Which device will you mainly use? <span>*</span>
-
-        </label>
-
-        <select
-            name="device"
-            required>
-
-            <option value="">Select Device</option>
-
-            <option>Smartphone</option>
-
-            <option>Tablet</option>
-
-            <option>Laptop</option>
-
-            <option>Desktop Computer</option>
-
-            <option>Shared Device</option>
-
-            <option>Other</option>
-
-        </select>
-
-    </div>
-
-    <!-- ========================================= -->
-    <!-- ADDITIONAL INFORMATION -->
-    <!-- ========================================= -->
-
-    <div class="form-group">
-
-        <label>
-
-            Is there anything else you would like AIR to know?
+            Additional Information
 
         </label>
 
         <textarea
             rows="5"
             name="additionalInformation"
-            placeholder="Tell us anything that may help us support you better."></textarea>
+            placeholder="Tell us anything else you would like AIR to know."></textarea>
 
     </div>
 
-    <!-- ========================================= -->
-    <!-- DECLARATION -->
-    <!-- ========================================= -->
+</section>
+<!-- ========================================= -->
+<!-- DECLARATION -->
+<!-- ========================================= -->
+
+<section id="declaration">
+
+    <h2>
+
+        Declaration
+
+    </h2>
+
+    <p>
+
+        Please confirm the following before submitting your learner registration.
+
+    </p>
 
     <div class="checkbox-group">
 
@@ -486,32 +487,59 @@
 
             <input
                 type="checkbox"
+                id="declarationCheck"
                 required>
 
-            I confirm that the information I have provided is true and
-            accurate to the best of my knowledge. I understand that
-            submitting this registration does not guarantee immediate
-            placement in the AIR Mentorship & Academic Support Network.
+            I confirm that the information provided is true and accurate.
 
         </label>
 
     </div>
 
-    <!-- ========================================= -->
-    <!-- SUBMIT -->
-    <!-- ========================================= -->
+    <div class="checkbox-group">
+
+        <label>
+
+            <input
+                type="checkbox"
+                id="privacyCheck"
+                required>
+
+            I consent to AIR storing my information for learner registration, mentorship matching and communication.
+
+        </label>
+
+    </div>
+
+</section>
+<!-- ========================================= -->
+<!-- SUBMIT -->
+<!-- ========================================= -->
+
+<section id="submitSection">
 
     <button
         type="submit"
         class="btn">
 
-        Submit Learner Registration
+        Join AIR as a Learner
 
     </button>
 
+</section>
+
+</div>
 </form>
 </div></section>
 <div id="footer"></div>
+
+<script src="js/gmail-verification.js"></script>
+
+<script src="js/AIR_Education_Database.js"></script>
+
 <script src="js/learner-registration.js"></script>
-<script src="js/includes.js"></script></body>
+
+<script src="js/includes.js"></script>
+
+</body>
 </html>
