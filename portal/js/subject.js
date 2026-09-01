@@ -4,7 +4,7 @@
    AIR SUBJECT PAGE
 ========================================== */
 
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyHu4hLVGKehFONLXDdVsXUaFOxbuP2Abkd6Ybg66jMN82TL0krHOzjheBQCMzhUSBg/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzzdqYVibzsOsOI6il0Jp6xKYM-pP3SD-g0rRP4-E08mFEYJaoyxk4b7AbL_AaKtPx6/exec";
 
 /* ==========================================
    LOAD SUBJECT
