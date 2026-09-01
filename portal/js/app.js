@@ -104,6 +104,19 @@ function initializePage(page){
 
         break;
 
+       case "assessment":
+
+    if (
+        typeof initializeAssessment ===
+        "function"
+    ) {
+
+        initializeAssessment();
+
+    }
+
+break;
+
         case "assignments":
 
             if(typeof loadAssignments==="function"){
@@ -124,16 +137,18 @@ function initializePage(page){
 
         break;
 
-        case "results":
+       case "results":
 
-            if(typeof loadResults==="function"){
+    if (
+        typeof initializeResults ===
+        "function"
+    ) {
 
-                loadResults();
+        initializeResults();
 
-            }
+    }
 
-        break;
-
+break;
         case "resources":
 
             if(typeof loadResources==="function"){

@@ -1,0 +1,301 @@
+<!-- =========================================
+     AIR PORTAL ASSESSMENT
+     This file is loaded INSIDE #content
+     ========================================= -->
+
+<div class="assessment-page">
+
+    <!-- Assessment Header -->
+
+    <div class="assessment-header">
+
+        <h1>Final Answers</h1>
+
+        <p>
+            Select the correct answer for each question
+            using your question paper.
+        </p>
+
+    </div>
+
+
+    <!-- Assessment Information -->
+
+    <div id="assessmentInfo">
+
+        Loading assessment...
+
+    </div>
+    
+<div id="questionPaperContainer"></div>
+
+    <!-- Countdown -->
+
+    <div id="countdownTimer"
+         class="countdown-timer">
+
+    </div>
+
+
+    <!-- Questions -->
+
+    <div id="questions">
+
+        <div class="loading">
+
+            Loading questions...
+
+        </div>
+
+    </div>
+
+
+    <!-- Submit -->
+
+    <button
+        id="submitAssessment"
+        type="button"
+        onclick="submitAssessment()"
+        disabled>
+
+        Submit Final Answers
+
+    </button>
+
+</div>
+
+
+<style>
+
+.assessment-page {
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+}
+
+
+.assessment-header {
+
+    margin-bottom: 20px;
+
+}
+
+
+.assessment-header h1 {
+
+    color: #124a87;
+
+    margin-bottom: 8px;
+
+}
+
+
+.assessment-header p {
+
+    margin-top: 0;
+
+}
+
+
+.assessment-code {
+
+    background: #eef4fb;
+
+    border-left: 5px solid #124a87;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.attempt-info {
+
+    background: #eef4fb;
+
+    border-left: 5px solid #124a87;
+
+    padding: 12px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.closed-message {
+
+    color: #b00020;
+
+    background: #ffeaea;
+
+    border-left: 5px solid #b00020;
+
+    padding: 15px;
+
+    border-radius: 6px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.error-message {
+
+    color: #b00020;
+
+    background: #ffeaea;
+
+    padding: 15px;
+
+    border-radius: 6px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.loading {
+
+    padding: 20px;
+
+    text-align: center;
+
+}
+
+
+.countdown-timer {
+
+    background: #fff8e1;
+
+    border-left: 5px solid #e0a800;
+
+    padding: 15px;
+
+    margin: 15px 0 25px 0;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+.countdown-timer.expired {
+
+    background: #ffeaea;
+
+    border-left-color: #b00020;
+
+    color: #b00020;
+
+}
+
+
+.question-heading {
+
+    margin-top: 35px;
+
+    margin-bottom: 20px;
+
+    color: #124a87;
+
+    border-bottom: 2px solid #124a87;
+
+    padding-bottom: 8px;
+
+}
+
+
+.question {
+
+    background: #ffffff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.question-number {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+
+}
+
+
+.option {
+
+    display: block;
+
+    padding: 12px;
+
+    margin: 8px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    background: #fafafa;
+
+}
+
+
+.option:hover {
+
+    background: #eef4fb;
+
+}
+
+
+.option input {
+
+    margin-right: 10px;
+
+}
+
+
+#submitAssessment {
+
+    width: 100%;
+
+    padding: 15px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 20px;
+
+}
+
+
+#submitAssessment:disabled {
+
+    cursor: not-allowed;
+
+    opacity: 0.6;
+
+}
+
+</style>

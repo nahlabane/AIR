@@ -3,7 +3,7 @@
 =========================================== */
 
 // Replace with your deployed Apps Script Web App URL
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwOiCHUjGaSWPxJxb9c5ORDTM3QrAORtbyZK6IdROwYOOVaXFeaBXqA4Mf5W98xaqU/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbye-prrN-FdqyteoxwJapxQsp5sYF1lp6lyBxGQh5YKunAzWhflIPd1oA7wQcTGWH4K/exec";
 
 /* ===========================================
    SEND GOOGLE USER TO AIR

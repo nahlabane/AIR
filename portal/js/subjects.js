@@ -41,6 +41,15 @@ function loadSubjects() {
                 <p>ZA-PHY-G12</p>
 
             </div>
+
+             <div class="card subject-card"
+                 onclick="openSubject('ZA-LO-G12')">
+
+                <h2>📘 Life Orientation</h2>
+
+                <p>ZA-LO-G12</p>
+
+            </div>
         `;
 
     } else {
@@ -61,6 +70,9 @@ function loadSubjects() {
                     subjectName = "⚛ Physical Sciences";
                     break;
 
+               case "ZA-LO-G12":
+                    subjectName = "📘 Life Orientation";
+                    break;
             }
 
             html += `

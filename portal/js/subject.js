@@ -4,7 +4,7 @@
    AIR SUBJECT PAGE
 ========================================== */
 
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwOiCHUjGaSWPxJxb9c5ORDTM3QrAORtbyZK6IdROwYOOVaXFeaBXqA4Mf5W98xaqU/exec";
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyHu4hLVGKehFONLXDdVsXUaFOxbuP2Abkd6Ybg66jMN82TL0krHOzjheBQCMzhUSBg/exec";
 
 /* ==========================================
    LOAD SUBJECT
@@ -30,17 +30,25 @@ function loadSubject() {
 
         case "ZA-MAT-G12":
 
-            title.innerHTML = "📘 Mathematics";
+            title.innerHTML = "Mathematics";
             description.innerHTML = "South Africa • Grade 12";
 
             break;
 
         case "ZA-PHY-G12":
 
-            title.innerHTML = "⚛ Physical Sciences";
+            title.innerHTML = "Physical Sciences";
             description.innerHTML = "South Africa • Grade 12";
 
             break;
+
+          case "ZA-LO-G12":
+
+            title.innerHTML = "Life Orientation";
+            description.innerHTML = "South Africa • Grade 12";
+
+            break;
+   
 
         default:
 
