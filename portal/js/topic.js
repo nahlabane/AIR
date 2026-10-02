@@ -1565,7 +1565,7 @@ function createResource(resource){
     }
 
 
-    /*=========================================
+        /*=========================================
       VIDEO
     =========================================*/
 
@@ -1574,25 +1574,98 @@ function createResource(resource){
         resource["Resource Link"]
     ){
 
-        html += `
+        const videoUrl =
+            resource["Resource Link"];
 
-                       <iframe
-                width="560"
-                height="315"
-                src="${convertVideoLink(
-                    resource["Resource Link"]
-                )}"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
+        let videoId = "";
 
-        `;
+        if(
+            videoUrl.includes("youtube.com/watch")
+        ){
+
+            videoId =
+                new URL(videoUrl)
+                .searchParams
+                .get("v");
+
+        }
+
+        else if(
+            videoUrl.includes("youtu.be")
+        ){
+
+            videoId =
+                videoUrl
+                .split("youtu.be/")[1]
+                .split("?")[0];
+
+        }
+
+
+        if(videoId){
+
+            html += `
+
+                <div
+                    class="air-video-preview"
+                    data-video-id="${videoId}"
+                    style="
+                        position:relative;
+                        width:100%;
+                        max-width:560px;
+                        aspect-ratio:16/9;
+                        background:#000;
+                        cursor:pointer;
+                        overflow:hidden;
+                    "
+                >
+
+                    <img
+                        src="https://img.youtube.com/vi/${videoId}/hqdefault.jpg"
+                        alt="Video thumbnail"
+                        style="
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                            display:block;
+                        "
+                    >
+
+                    <div
+                        style="
+                            position:absolute;
+                            top:50%;
+                            left:50%;
+                            transform:translate(-50%,-50%);
+                            width:70px;
+                            height:50px;
+                            background:#f00;
+                            border-radius:14px;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                        "
+                    >
+
+                        <span
+                            style="
+                                color:white;
+                                font-size:28px;
+                                margin-left:4px;
+                            "
+                        >
+                            ▶
+                        </span>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
 
     }
-
 
     /*=========================================
       VIDEO WITHOUT LINK
@@ -1753,42 +1826,158 @@ function convertVideoLink(url) {
 
     if (!url) return "";
 
-    // YouTube
-    if (url.includes("youtube.com/watch")) {
 
-        const id = new URL(url).searchParams.get("v");
-        if (id) return "https://www.youtube-nocookie.com/embed/" + id;
+    // =========================================
+    // MAIN YOUTUBE FORMAT — youtu.be
+    // =========================================
 
-    }
+    if (url.includes("youtu.be/")) {
 
-    // youtu.be
-    if (url.includes("youtu.be")) {
+        const id =
+            url.split("youtu.be/")[1].split("?")[0];
 
-        const id = url.split("youtu.be/")[1].split("?")[0];
-        return "https://www.youtube-nocookie.com/embed/" + id;
+        if (id) {
 
-    }
+            return "https://www.youtube-nocookie.com/embed/" + id;
 
-    // Vimeo
-    if (url.includes("vimeo.com")) {
-
-        const id = url.split("/").pop().split("?")[0];
-        return "https://player.vimeo.com/video/" + id;
-
-    }
-
-    // Google Drive
-    if (url.includes("drive.google.com")) {
-
-        const match = url.match(/\/d\/([^/]+)/);
-
-        if (match) {
-            return `https://drive.google.com/file/d/${match[1]}/preview`;
         }
 
     }
 
-    // All other links
-    return url;
-}
 
+    // =========================================
+    // YOUTUBE FORMAT — youtube.com/watch
+    // =========================================
+
+    if (url.includes("youtube.com/watch")) {
+
+        const id =
+            new URL(url).searchParams.get("v");
+
+        if (id) {
+
+            return "https://www.youtube-nocookie.com/embed/" + id;
+
+        }
+
+    }
+
+
+    // =========================================
+    // ALL OTHER LINKS
+    // =========================================
+
+    return url;
+
+}
+/*=========================================
+  LOAD YOUTUBE VIDEO
+  WITH FALLBACK TO YOUTUBE
+=========================================*/
+
+document.addEventListener("click", function(e){
+
+    const preview =
+        e.target.closest(".air-video-preview");
+
+    if(!preview){
+        return;
+    }
+
+    const videoId =
+        preview.dataset.videoId;
+
+    if(!videoId){
+        return;
+    }
+
+
+    /*-----------------------------------------
+      YOUTUBE URL
+    -----------------------------------------*/
+
+    const youtubeUrl =
+        "https://youtu.be/" + videoId;
+
+
+    /*-----------------------------------------
+      LOAD IFRAME
+    -----------------------------------------*/
+
+    preview.innerHTML = `
+
+        <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+
+    `;
+
+
+    /*-----------------------------------------
+      FALLBACK
+    -----------------------------------------*/
+
+    setTimeout(function(){
+
+        if(!document.body.contains(preview)){
+            return;
+        }
+
+
+        preview.innerHTML = `
+
+            <div
+                style="
+                    width:100%;
+                    height:100%;
+                    min-height:315px;
+                    background:#f1f1f1;
+                    display:flex;
+                    flex-direction:column;
+                    align-items:center;
+                    justify-content:center;
+                    text-align:center;
+                    padding:20px;
+                    box-sizing:border-box;
+                "
+            >
+
+                <h3>
+                    🎥 Video could not be loaded here
+                </h3>
+
+                <p>
+                    Please open the video directly on YouTube.
+                </p>
+
+                <a
+                    href="${youtubeUrl}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="
+                        display:inline-block;
+                        padding:12px 20px;
+                        background:#ff0000;
+                        color:white;
+                        text-decoration:none;
+                        border-radius:6px;
+                        font-weight:bold;
+                    "
+                >
+                    ▶ Open Video on YouTube
+                </a>
+
+            </div>
+
+        `;
+
+    }, 10000);
+
+});
