@@ -21,59 +21,208 @@
 
     <div class="login-container">
 
+        <!-- AIR LOGO -->
+
         <img src="../images/air-logo.PNG"
              alt="AIR Logo"
              class="logo">
 
-        <h1>
+        <!-- PORTAL HEADING -->
 
-            AIR Portal
+        <h1>AIR Portal</h1>
 
-        </h1>
+        <p>African Industrial Revolution</p>
 
-        <p>
+        <p class="subtitle">Learning Management System</p>
 
-            African Industrial Revolution
+        <!-- GOOGLE SIGN-IN: ORIGINAL CONFIGURATION PRESERVED -->
 
-        </p>
+        <div id="googleLoginSection">
 
-        <p class="subtitle">
+            <div id="g_id_onload"
+                 data-client_id="624176789588-3oq4ravgcdae4lks8lt8t26c4fg7l1hu.apps.googleusercontent.com"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
 
-            Learning Management System
-
-        </p>
-
-        <!-- Google Login Button -->
-
-        <div id="g_id_onload"
-
-            data-client_id="624176789588-3oq4ravgcdae4lks8lt8t26c4fg7l1hu.apps.googleusercontent.com"
-
-            data-callback="handleCredentialResponse"
-
-            data-auto_prompt="false">
-
-        </div>
-
-        <div class="g_id_signin"
-
-            data-type="standard"
-
-            data-size="large"
-
-            data-theme="filled_blue"
-
-            data-text="signin_with"
-
-            data-shape="pill"
-
-            data-logo_alignment="left">
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-size="large"
+                 data-theme="filled_blue"
+                 data-text="signin_with"
+                 data-shape="pill"
+                 data-logo_alignment="left">
+            </div>
 
         </div>
 
-        <div id="loginStatus"></div>
+        <!-- DIVIDER -->
+
+        <div class="login-divider">
+            <span>OR</span>
+        </div>
+
+        <!-- EMAIL LOGIN -->
+
+        <section id="emailLoginSection">
+
+            <h2>Sign in with your AIR email</h2>
+
+            <p class="section-description">
+                Use the email address registered with AIR.
+            </p>
+
+            <label for="emailAddress">Email Address</label>
+
+            <input
+                type="email"
+                id="emailAddress"
+                placeholder="Enter your registered email"
+                autocomplete="email"
+                required>
+
+            <button
+                type="button"
+                id="continueEmailBtn"
+                onclick="checkAIRAccount()">
+
+                Continue
+
+            </button>
+
+        </section>
+
+        <!-- EMAIL OTP VERIFICATION -->
+
+        <section id="otpSection" hidden>
+
+            <h2>Verify Your Email</h2>
+
+            <p class="section-description">
+                Enter the six-digit verification code sent to your email.
+            </p>
+
+            <label for="otpCode">Verification Code</label>
+
+            <input
+                type="text"
+                id="otpCode"
+                placeholder="Enter 6-digit code"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                maxlength="6">
+
+            <button
+                type="button"
+                id="verifyOtpBtn"
+                onclick="verifyEmailOTP()">
+
+                Verify Email
+
+            </button>
+
+            <button
+                type="button"
+                class="secondary-button"
+                onclick="backToEmailLogin()">
+
+                Back
+
+            </button>
+
+        </section>
+
+        <!-- CREATE LOGIN PIN -->
+
+        <section id="createPinSection" hidden>
+
+            <h2>Create Your Login PIN</h2>
+
+            <p class="section-description">
+                Create a five-digit PIN for future access to the AIR Portal.
+            </p>
+
+            <label for="newPin">New PIN</label>
+
+            <input
+                type="password"
+                id="newPin"
+                placeholder="Enter 5-digit PIN"
+                inputmode="numeric"
+                autocomplete="new-password"
+                maxlength="5">
+
+            <label for="confirmPin">Confirm PIN</label>
+
+            <input
+                type="password"
+                id="confirmPin"
+                placeholder="Confirm your PIN"
+                inputmode="numeric"
+                autocomplete="new-password"
+                maxlength="5">
+
+            <button
+                type="button"
+                id="createPinBtn"
+                onclick="createAIRPin()">
+
+                Create PIN
+
+            </button>
+
+        </section>
+
+        <!-- EXISTING USER PIN LOGIN -->
+
+        <section id="pinLoginSection" hidden>
+
+            <h2>Sign in with your PIN</h2>
+
+            <p class="section-description">
+                Enter your five-digit PIN to access the AIR Portal.
+            </p>
+
+            <label for="loginPin">Login PIN</label>
+
+            <input
+                type="password"
+                id="loginPin"
+                placeholder="Enter your 5-digit PIN"
+                inputmode="numeric"
+                autocomplete="current-password"
+                maxlength="5">
+
+            <button
+                type="button"
+                id="loginPinBtn"
+                onclick="loginWithAIRPin()">
+
+                Sign In
+
+            </button>
+
+            <button
+                type="button"
+                class="secondary-button"
+                onclick="startPINRecovery()">
+
+                Forgot PIN?
+
+            </button>
+
+        </section>
+
+        <!-- AUTHENTICATION STATUS -->
+
+        <div id="loginStatus"
+             role="status"
+             aria-live="polite">
+        </div>
 
     </div>
+
+    <!-- ORIGINAL JAVASCRIPT FILES PRESERVED -->
 
     <script src="js/login.js"></script>
     <script src="js/auth.js"></script>
